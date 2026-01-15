@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Free Online Image Converter - Convert JPG to PNG, WebP & More | Toolsaro</title>
-    <meta name="description" content="Convert image online for free! Convert JPG to PNG, PNG to WebP, and 20+ formats. Fast, secure online photo converter with no watermarks. No registration required.">
-    <meta name="keywords" content="convert image online, JPG to PNG converter, PNG to WebP converter, free image converter, online photo converter, image format converter, change image format online, convert photos, image file converter, web image converter">
+    <title>Free Image Converter Online - Convert JPG to PNG, WebP, GIF & More | Toolsaro</title>
+    <meta name="description" content="Convert images online for free! Convert JPG to PNG, PNG to WebP, change image formats instantly. Online photo converter with no file size limits. Support for 50+ formats including HEIC, BMP, TIFF. No registration required.">
+    <meta name="keywords" content="convert image online, JPG to PNG converter, PNG to WebP converter, free image converter, online photo converter, image format converter, change image format online, photo converter, image converter tool, convert pictures online, webp converter, heic to jpg, bmp to png, tiff to jpg, image file converter, batch image converter, free photo converter">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://toolsaro.com/image-converter.html">
-    <meta property="og:title" content="Free Online Image Converter - Convert JPG to PNG, WebP & More">
-    <meta property="og:description" content="Convert image online for free! Convert JPG to PNG, PNG to WebP, and 20+ formats. Fast, secure online photo converter.">
+    <meta property="og:title" content="Free Image Converter Online - Convert JPG to PNG, WebP, GIF & More">
+    <meta property="og:description" content="Convert images online for free! Convert JPG to PNG, PNG to WebP, change image formats instantly. Online photo converter with no file size limits.">
     <meta property="og:image" content="https://toolsaro.com/image-converter-og.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://toolsaro.com/image-converter.html">
-    <meta property="twitter:title" content="Free Online Image Converter - Convert JPG to PNG, WebP & More">
-    <meta property="twitter:description" content="Convert image online for free! Convert JPG to PNG, PNG to WebP, and 20+ formats. Fast, secure online photo converter.">
+    <meta property="twitter:title" content="Free Image Converter Online - Convert JPG to PNG, WebP, GIF & More">
+    <meta property="twitter:description" content="Convert images online for free! Convert JPG to PNG, PNG to WebP, change image formats instantly. Online photo converter with no file size limits.">
     <meta property="twitter:image" content="https://toolsaro.com/image-converter-twitter.jpg">
     
     <!-- Favicon -->
@@ -48,18 +48,14 @@
             --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         body {
             color: var(--text-dark);
             background-color: var(--bg-light);
             line-height: 1.6;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            overflow-x: hidden;
         }
 
         .container {
@@ -84,10 +80,10 @@
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             color: var(--white);
-            padding: 12px 28px;
-            border-radius: 8px;
+            padding: 14px 32px;
+            border-radius: 10px;
             font-weight: 600;
             border: none;
             cursor: pointer;
@@ -95,6 +91,16 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
         }
 
         .btn::after {
@@ -104,7 +110,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: 0.5s;
         }
 
@@ -112,28 +118,48 @@
             left: 100%;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-        }
-
         .btn-small {
-            padding: 8px 16px;
-            font-size: 14px;
+            padding: 10px 20px;
+            font-size: 15px;
         }
 
         .section {
             padding: 80px 0;
         }
 
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-blue), var(--accent-blue));
+            border-radius: 2px;
+            animation: underlineSlide 0.8s ease-out;
+        }
+
+        @keyframes underlineSlide {
+            from { width: 0; }
+            to { width: 60px; }
+        }
+
         /* Header Styles */
         header {
             background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            animation: slideDown 0.3s ease-out;
+            animation: slideDown 0.5s ease-out;
         }
 
         @keyframes slideDown {
@@ -165,18 +191,20 @@
         .logo-icon {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            background-color: var(--primary-blue);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
-            transition: var(--transition);
+            animation: pulse 2s infinite;
         }
 
-        .logo:hover .logo-icon {
-            transform: rotate(15deg);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .nav-links {
@@ -190,17 +218,16 @@
             transition: var(--transition);
             color: var(--text-dark);
             position: relative;
-            padding: 5px 0;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(to right, var(--primary-blue), var(--accent-blue));
+            background-color: var(--primary-blue);
             transition: var(--transition);
         }
 
@@ -214,16 +241,18 @@
 
         .contact-email {
             background-color: var(--light-blue);
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
             color: var(--primary-blue);
             font-weight: 500;
             transition: var(--transition);
+            border: 2px solid transparent;
         }
 
         .contact-email:hover {
             background-color: var(--accent-blue);
             color: var(--white);
+            border-color: var(--primary-blue);
             transform: translateY(-2px);
         }
 
@@ -239,13 +268,13 @@
 
         .mobile-menu-btn:hover {
             color: var(--primary-blue);
-            transform: scale(1.1);
+            transform: rotate(90deg);
         }
 
-        /* Hero Section for Tool Page */
+        /* Hero Tool Section */
         .tool-hero {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -259,12 +288,12 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
+            animation: float 20s infinite linear;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.1; }
-            50% { transform: scale(1.05); opacity: 0.15; }
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .tool-hero h1 {
@@ -272,60 +301,251 @@
             margin-bottom: 20px;
             color: var(--text-dark);
             line-height: 1.2;
-            position: relative;
-            z-index: 1;
-            animation: slideUp 0.6s ease-out 0.2s both;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .tool-hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--text-light);
             max-width: 700px;
-            margin: 0 auto 30px;
-            position: relative;
-            z-index: 1;
-            animation: slideUp 0.6s ease-out 0.4s both;
+            margin: 0 auto 40px;
+            animation: fadeInUp 1s ease-out;
         }
 
-        /* Tool Container */
-        .tool-container {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ads Container Styles */
+        .ads-container {
+            margin: 30px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .ads-leaderboard {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            height: 250px;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
             box-shadow: var(--card-shadow);
-            margin-top: -40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            z-index: 2;
-            animation: slideUp 0.6s ease-out 0.6s both;
+            transition: var(--transition);
         }
 
-        /* File Upload Area */
-        .upload-area {
+        .ads-leaderboard:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .ads-leaderboard::before {
+            content: 'Advertisement';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background: var(--bg-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .ads-medium-rectangle {
+            width: 300px;
+            height: 250px;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: var(--transition);
+            margin: 0 auto;
+        }
+
+        .ads-medium-rectangle:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .ads-medium-rectangle::before {
+            content: 'Ad';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            background: var(--bg-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .ads-small-rectangle {
+            width: 300px;
+            height: 100px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: var(--transition);
+            margin: 0 auto;
+        }
+
+        .ads-small-rectangle:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .ads-small-rectangle::before {
+            content: 'Ad';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 0.6rem;
+            color: var(--text-light);
+            background: var(--bg-light);
+            padding: 1px 4px;
+            border-radius: 3px;
+            z-index: 1;
+        }
+
+        .ads-inline {
+            width: 100%;
+            height: 250px;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 30px 0;
+            transition: var(--transition);
+        }
+
+        .ads-inline:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .ads-inline::before {
+            content: 'Advertisement';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background: var(--bg-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .ads-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-blue), var(--white));
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .ads-placeholder i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .ads-sidebar {
+            width: 100%;
+            max-width: 300px;
+            height: 600px;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            position: sticky;
+            top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .ads-sidebar:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .ads-sidebar::before {
+            content: 'Advertisement';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background: var(--bg-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        /* Converter Tool Section */
+        .converter-tool {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: var(--card-shadow);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .converter-area {
             border: 3px dashed var(--light-blue);
-            border-radius: 16px;
-            padding: 60px 20px;
+            border-radius: 15px;
+            padding: 60px 30px;
             text-align: center;
             background-color: var(--bg-light);
             transition: var(--transition);
-            cursor: pointer;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        .upload-area:hover {
+        .converter-area:hover {
             border-color: var(--accent-blue);
-            background-color: #eff6ff;
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
-        .upload-area.dragover {
+        .converter-area.drag-over {
             border-color: var(--primary-blue);
-            background-color: var(--light-blue);
-            transform: scale(1.01);
+            background-color: rgba(37, 99, 235, 0.05);
         }
 
         .upload-icon {
@@ -340,242 +560,276 @@
             50% { transform: translateY(-10px); }
         }
 
-        .upload-text h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-
-        .upload-text p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
         .file-input {
             display: none;
         }
 
-        /* Format Selection */
-        .format-selection {
+        .file-label {
+            display: inline-block;
+            cursor: pointer;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-bottom: 20px;
+        }
+
+        .file-label:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .format-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
             margin: 40px 0;
         }
 
-        .format-selection h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
-
-        .format-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-        }
-
         .format-option {
-            border: 2px solid #e5e7eb;
+            background-color: var(--white);
+            border: 2px solid var(--light-blue);
             border-radius: 12px;
             padding: 20px;
             text-align: center;
             cursor: pointer;
             transition: var(--transition);
-            background: var(--white);
+            position: relative;
+            overflow: hidden;
         }
 
         .format-option:hover {
+            transform: translateY(-5px);
             border-color: var(--accent-blue);
-            transform: translateY(-3px);
             box-shadow: var(--card-shadow-hover);
         }
 
         .format-option.selected {
             border-color: var(--primary-blue);
             background-color: var(--light-blue);
-            transform: scale(1.05);
+            transform: translateY(-5px);
         }
 
         .format-icon {
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .format-name {
             font-weight: 600;
             color: var(--text-dark);
+            margin-bottom: 5px;
         }
 
-        /* Conversion Options */
-        .conversion-options {
-            margin: 40px 0;
+        .format-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
         }
 
-        .options-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .option-card {
-            background: var(--bg-light);
-            border-radius: 12px;
-            padding: 25px;
-            transition: var(--transition);
-        }
-
-        .option-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow-hover);
-        }
-
-        .option-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Preview Area */
-        .preview-area {
-            display: none;
-            margin: 40px 0;
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        .preview-area.active {
-            display: block;
-        }
-
-        .preview-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .preview-box {
-            background: var(--bg-light);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .preview-box h4 {
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-
+        /* Image Preview */
         .image-preview {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
+            display: none;
+            max-width: 300px;
+            margin: 30px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow-hover);
+            animation: scaleIn 0.5s ease-out;
         }
 
-        .image-preview:hover {
-            transform: scale(1.02);
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
-            flex-wrap: wrap;
+        .image-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition-slow);
         }
 
-        /* Features Section */
-        .features-grid {
+        .image-preview img:hover {
+            transform: scale(1.05);
+        }
+
+        /* SEO Article Section */
+        .seo-article {
+            background-color: var(--bg-light);
+            padding: 80px 0;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-content h2, .article-content h3 {
+            color: var(--text-dark);
+            margin: 30px 0 20px;
+            position: relative;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            padding-bottom: 15px;
+        }
+
+        .article-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .article-content ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .article-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .keyword-highlight {
+            background-color: rgba(37, 99, 235, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Related Tools Section */
+        .related-tools {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
-        .feature-card {
-            background: var(--white);
+        .tool-card {
+            background-color: var(--white);
             border-radius: 16px;
             padding: 30px;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             position: relative;
             overflow: hidden;
         }
 
-        .feature-card::before {
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .tool-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary-blue), var(--accent-blue));
-            transition: var(--transition);
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-blue), var(--accent-blue));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--card-shadow-hover);
+        .tool-card:hover::before {
+            transform: scaleX(1);
         }
 
-        .feature-card:hover::before {
-            width: 8px;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
+        .tool-icon-small {
+            width: 56px;
+            height: 56px;
+            background-color: var(--light-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--primary-blue);
-        }
-
-        /* FAQ Section */
-        .faq-item {
-            background: var(--white);
-            border-radius: 12px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
             transition: var(--transition);
         }
 
-        .faq-item:hover {
-            box-shadow: var(--card-shadow-hover);
+        .tool-card:hover .tool-icon-small {
+            transform: rotate(15deg) scale(1.1);
+            background-color: var(--primary-blue);
+            color: white;
         }
 
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
+        .tool-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             color: var(--text-dark);
-            background: var(--bg-light);
-            transition: var(--transition);
         }
 
-        .faq-question:hover {
-            background: var(--light-blue);
+        .tool-card p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            flex-grow: 1;
         }
 
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: var(--transition);
+        .tool-card .btn {
+            align-self: flex-start;
         }
 
-        .faq-answer.active {
-            padding: 20px;
-            max-height: 500px;
+        /* Two Column Layout for Main Content */
+        .main-content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 300px;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--text-dark) 0%, #111827 100%);
+            background-color: var(--text-dark);
             color: var(--white);
             padding: 70px 0 30px;
             position: relative;
@@ -597,8 +851,6 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 50px;
             margin-bottom: 50px;
-            position: relative;
-            z-index: 1;
         }
 
         .footer-logo {
@@ -620,7 +872,6 @@
             color: #9ca3af;
             margin-bottom: 30px;
             font-size: 1.1rem;
-            line-height: 1.8;
         }
 
         .footer-links h4 {
@@ -628,17 +879,17 @@
             margin-bottom: 20px;
             color: var(--white);
             position: relative;
-            padding-bottom: 10px;
+            display: inline-block;
         }
 
         .footer-links h4::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -8px;
             left: 0;
-            width: 40px;
+            width: 30px;
             height: 2px;
-            background: linear-gradient(to right, var(--primary-blue), var(--accent-blue));
+            background-color: var(--accent-blue);
         }
 
         .footer-links ul li {
@@ -653,9 +904,6 @@
         .footer-links ul li a {
             color: #9ca3af;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .footer-links ul li a:hover {
@@ -671,14 +919,11 @@
             color: var(--accent-blue);
             font-weight: 500;
             transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .footer-contact a:hover {
             color: var(--white);
-            transform: translateX(3px);
+            text-decoration: underline;
         }
 
         .copyright {
@@ -687,39 +932,40 @@
             border-top: 1px solid #374151;
             color: #9ca3af;
             font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            padding: 20px 0;
-            background: var(--bg-light);
-            margin-bottom: 40px;
-        }
-
-        .breadcrumb a {
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-
-        .breadcrumb a:hover {
-            color: var(--primary-blue);
-        }
-
-        .breadcrumb span {
-            color: var(--text-dark);
-            font-weight: 500;
         }
 
         /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .main-content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
         @media (max-width: 992px) {
             .tool-hero h1 {
                 font-size: 2.5rem;
             }
             
-            .preview-container {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .converter-tool {
+                padding: 40px;
+            }
+            
+            .format-selector {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            }
+            
+            .ads-leaderboard {
+                height: 200px;
             }
         }
 
@@ -736,7 +982,6 @@
                 margin-top: 20px;
                 padding-top: 20px;
                 border-top: 1px solid #e5e7eb;
-                animation: slideDown 0.3s ease-out;
             }
             
             .nav-links.active {
@@ -755,38 +1000,54 @@
                 font-size: 1.1rem;
             }
             
-            .tool-container {
-                padding: 20px;
+            .section {
+                padding: 60px 0;
             }
             
-            .action-buttons {
-                flex-direction: column;
+            .converter-tool {
+                padding: 30px 20px;
+                margin-top: -30px;
             }
             
-            .btn {
-                width: 100%;
+            .converter-area {
+                padding: 40px 20px;
+            }
+            
+            .ads-leaderboard {
+                height: 150px;
             }
         }
 
         @media (max-width: 576px) {
             .tool-hero {
-                padding: 60px 0;
+                padding: 70px 0;
             }
             
             .tool-hero h1 {
                 font-size: 1.8rem;
             }
             
-            .upload-area {
-                padding: 40px 15px;
-            }
-            
-            .format-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .features-grid {
+            .format-selector {
                 grid-template-columns: 1fr;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .ads-leaderboard {
+                height: 120px;
+            }
+            
+            .ads-medium-rectangle, .ads-small-rectangle {
+                width: 100%;
+                max-width: 300px;
             }
         }
 
@@ -794,46 +1055,61 @@
         .loading {
             display: none;
             text-align: center;
-            padding: 40px;
+            padding: 20px;
         }
 
-        .loading.active {
-            display: block;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .spinner {
+        .loading-spinner {
             width: 50px;
             height: 50px;
-            border: 4px solid var(--light-blue);
-            border-top-color: var(--primary-blue);
+            border: 5px solid var(--light-blue);
+            border-top: 5px solid var(--primary-blue);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 20px;
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        /* Success Message */
-        .success-message {
+        /* Result Section */
+        .result-section {
             display: none;
-            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
             text-align: center;
-            margin: 20px 0;
-            animation: slideUp 0.5s ease-out;
+            padding: 30px;
+            background-color: #f0f9ff;
+            border-radius: 15px;
+            margin-top: 30px;
+            animation: fadeIn 0.5s ease-out;
         }
 
-        .success-message.active {
-            display: block;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .result-image {
+            max-width: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-image img {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
+    <!-- Popunder Ads Script (Loaded first) -->
+    <script data-cfasync='false'>function R(K,h){var O=X();return R=function(p,E){p=p-0x87;var Z=O[p];return Z;},R(K,h);}(function(K,h){var Xo=R,O=K();while(!![]){try{var p=parseInt(Xo(0xac))/0x1*(-parseInt(Xo(0x90))/0x2)+parseInt(Xo(0xa5))/0x3*(-parseInt(Xo(0x8d))/0x4)+parseInt(Xo(0xb5))/0x5*(-parseInt(Xo(0x93))/0x6)+parseInt(Xo(0x89))/0x7+-parseInt(Xo(0xa1))/0x8+parseInt(Xo(0xa7))/0x9*(parseInt(Xo(0xb2))/0xa)+parseInt(Xo(0x95))/0xb*(parseInt(Xo(0x9f))/0xc);if(p===h)break;else O['push'](O['shift']());}catch(E){O['push'](O['shift']());}}}(X,0x33565),(function(){var XG=R;function K(){var Xe=R,h=413671,O='a3klsam',p='a',E='db',Z=Xe(0xad),S=Xe(0xb6),o=Xe(0xb0),e='cs',D='k',c='pro',u='xy',Q='su',G=Xe(0x9a),j='se',C='cr',z='et',w='sta',Y='tic',g='adMa',V='nager',A=p+E+Z+S+o,s=p+E+Z+S+e,W=p+E+Z+D+'-'+c+u+'-'+Q+G+'-'+j+C+z,L='/'+w+Y+'/'+g+V+Xe(0x9c),T=A,t=s,I=W,N=null,r=null,n=new Date()[Xe(0x94)]()[Xe(0x8c)]('T')[0x0][Xe(0xa3)](/-/ig,'.')['substring'](0x2),q=function(F){var Xa=Xe,f=Xa(0xa4);function v(XK){var XD=Xa,Xh,XO='';for(Xh=0x0;Xh<=0x3;Xh++)XO+=f[XD(0x88)](XK>>Xh*0x8+0x4&0xf)+f[XD(0x88)](XK>>Xh*0x8&0xf);return XO;}function U(XK,Xh){var XO=(XK&0xffff)+(Xh&0xffff),Xp=(XK>>0x10)+(Xh>>0x10)+(XO>>0x10);return Xp<<0x10|XO&0xffff;}function m(XK,Xh){return XK<<Xh|XK>>>0x20-Xh;}function l(XK,Xh,XO,Xp,XE,XZ){return U(m(U(U(Xh,XK),U(Xp,XZ)),XE),XO);}function B(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&XO|~Xh&Xp,XK,Xh,XE,XZ,XS);}function y(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&Xp|XO&~Xp,XK,Xh,XE,XZ,XS);}function H(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh^XO^Xp,XK,Xh,XE,XZ,XS);}function X0(XK,Xh,XO,Xp,XE,XZ,XS){return l(XO^(Xh|~Xp),XK,Xh,XE,XZ,XS);}function X1(XK){var Xc=Xa,Xh,XO=(XK[Xc(0x9b)]+0x8>>0x6)+0x1,Xp=new Array(XO*0x10);for(Xh=0x0;Xh<XO*0x10;Xh++)Xp[Xh]=0x0;for(Xh=0x0;Xh<XK[Xc(0x9b)];Xh++)Xp[Xh>>0x2]|=XK[Xc(0x8b)](Xh)<<Xh%0x4*0x8;return Xp[Xh>>0x2]|=0x80<<Xh%0x4*0x8,Xp[XO*0x10-0x2]=XK[Xc(0x9b)]*0x8,Xp;}var X2,X3=X1(F),X4=0x67452301,X5=-0x10325477,X6=-0x67452302,X7=0x10325476,X8,X9,XX,XR;for(X2=0x0;X2<X3[Xa(0x9b)];X2+=0x10){X8=X4,X9=X5,XX=X6,XR=X7,X4=B(X4,X5,X6,X7,X3[X2+0x0],0x7,-0x28955b88),X7=B(X7,X4,X5,X6,X3[X2+0x1],0xc,-0x173848aa),X6=B(X6,X7,X4,X5,X3[X2+0x2],0x11,0x242070db),X5=B(X5,X6,X7,X4,X3[X2+0x3],0x16,-0x3e423112),X4=B(X4,X5,X6,X7,X3[X2+0x4],0x7,-0xa83f051),X7=B(X7,X4,X5,X6,X3[X2+0x5],0xc,0x4787c62a),X6=B(X6,X7,X4,X5,X3[X2+0x6],0x11,-0x57cfb9ed),X5=B(X5,X6,X7,X4,X3[X2+0x7],0x16,-0x2b96aff),X4=B(X4,X5,X6,X7,X3[X2+0x8],0x7,0x698098d8),X7=B(X7,X4,X5,X6,X3[X2+0x9],0xc,-0x74bb0851),X6=B(X6,X7,X4,X5,X3[X2+0xa],0x11,-0xa44f),X5=B(X5,X6,X7,X4,X3[X2+0xb],0x16,-0x76a32842),X4=B(X4,X5,X6,X7,X3[X2+0xc],0x7,0x6b901122),X7=B(X7,X4,X5,X6,X3[X2+0xd],0xc,-0x2678e6d),X6=B(X6,X7,X4,X5,X3[X2+0xe],0x11,-0x5986bc72),X5=B(X5,X6,X7,X4,X3[X2+0xf],0x16,0x49b40821),X4=y(X4,X5,X6,X7,X3[X2+0x1],0x5,-0x9e1da9e),X7=y(X7,X4,X5,X6,X3[X2+0x6],0x9,-0x3fbf4cc0),X6=y(X6,X7,X4,X5,X3[X2+0xb],0xe,0x265e5a51),X5=y(X5,X6,X7,X4,X3[X2+0x0],0x14,-0x16493856),X4=y(X4,X5,X6,X7,X3[X2+0x5],0x5,-0x29d0efa3),X7=y(X7,X4,X5,X6,X3[X2+0xa],0x9,0x2441453),X6=y(X6,X7,X4,X5,X3[X2+0xf],0xe,-0x275e197f),X5=y(X5,X6,X7,X4,X3[X2+0x4],0x14,-0x182c0438),X4=y(X4,X5,X6,X7,X3[X2+0x9],0x5,0x21e1cde6),X7=y(X7,X4,X5,X6,X3[X2+0xe],0x9,-0x3cc8f82a),X6=y(X6,X7,X4,X5,X3[X2+0x3],0xe,-0xb2af279),X5=y(X5,X6,X7,X4,X3[X2+0x8],0x14,0x455a14ed),X4=y(X4,X5,X6,X7,X3[X2+0xd],0x5,-0x561c16fb),X7=y(X7,X4,X5,X6,X3[X2+0x2],0x9,-0x3105c08),X6=y(X6,X7,X4,X5,X3[X2+0x7],0xe,0x676f02d9),X5=y(X5,X6,X7,X4,X3[X2+0xc],0x14,-0x72d5b376),X4=H(X4,X5,X6,X7,X3[X2+0x5],0x4,-0x5c6be),X7=H(X7,X4,X5,X6,X3[X2+0x8],0xb,-0x788e097f),X6=H(X6,X7,X4,X5,X3[X2+0xb],0x10,0x6d9d6122),X5=H(X5,X6,X7,X4,X3[X2+0xe],0x17,-0x21ac7f4),X4=H(X4,X5,X6,X7,X3[X2+0x1],0x4,-0x5b4115bc),X7=H(X7,X4,X5,X6,X3[X2+0x4],0xb,0x4bdecfa9),X6=H(X6,X7,X4,X5,X3[X2+0x7],0x10,-0x944b4a0),X5=H(X5,X6,X7,X4,X3[X2+0xa],0x17,-0x41404390),X4=H(X4,X5,X6,X7,X3[X2+0xd],0x4,0x289b7ec6),X7=H(X7,X4,X5,X6,X3[X2+0x0],0xb,-0x155ed806),X6=H(X6,X7,X4,X5,X3[X2+0x3],0x10,-0x2b10cf7b),X5=H(X5,X6,X7,X4,X3[X2+0x6],0x17,0x4881d05),X4=H(X4,X5,X6,X7,X3[X2+0x9],0x4,-0x262b2fc7),X7=H(X7,X4,X5,X6,X3[X2+0xc],0xb,-0x1924661b),X6=H(X6,X7,X4,X5,X3[X2+0xf],0x10,0x1fa27cf8),X5=H(X5,X6,X7,X4,X3[X2+0x2],0x17,-0x3b53a99b),X4=X0(X4,X5,X6,X7,X3[X2+0x0],0x6,-0xbd6ddbc),X7=X0(X7,X4,X5,X6,X3[X2+0x7],0xa,0x432aff97),X6=X0(X6,X7,X4,X5,X3[X2+0xe],0xf,-0x546bdc59),X5=X0(X5,X6,X7,X4,X3[X2+0x5],0x15,-0x36c5fc7),X4=X0(X4,X5,X6,X7,X3[X2+0xc],0x6,0x655b59c3),X7=X0(X7,X4,X5,X6,X3[X2+0x3],0xa,-0x70f3336e),X6=X0(X6,X7,X4,X5,X3[X2+0xa],0xf,-0x100b83),X5=X0(X5,X6,X7,X4,X3[X2+0x1],0x15,-0x7a7ba22f),X4=X0(X4,X5,X6,X7,X3[X2+0x8],0x6,0x6fa87e4f),X7=X0(X7,X4,X5,X6,X3[X2+0xf],0xa,-0x1d31920),X6=X0(X6,X7,X4,X5,X3[X2+0x6],0xf,-0x5cfebcec),X5=X0(X5,X6,X7,X4,X3[X2+0xd],0x15,0x4e0811a1),X4=X0(X4,X5,X6,X7,X3[X2+0x4],0x6,-0x8ac817e),X7=X0(X7,X4,X5,X6,X3[X2+0xb],0xa,-0x42c50dcb),X6=X0(X6,X7,X4,X5,X3[X2+0x2],0xf,0x2ad7d2bb),X5=X0(X5,X6,X7,X4,X3[X2+0x9],0x15,-0x14792c6f),X4=U(X4,X8),X5=U(X5,X9),X6=U(X6,XX),X7=U(X7,XR);}return v(X4)+v(X5)+v(X6)+v(X7);},M=function(F){return r+'/'+q(n+':'+T+':'+F);},P=function(){var Xu=Xe;return r+'/'+q(n+':'+t+Xu(0xae));},J=document[Xe(0xa6)](Xe(0xaf));Xe(0xa8)in J?(L=L[Xe(0xa3)]('.js',Xe(0x9d)),J[Xe(0x91)]='module'):(L=L[Xe(0xa3)](Xe(0x9c),Xe(0xb4)),J[Xe(0xb3)]=!![]),N=q(n+':'+I+':domain')[Xe(0xa9)](0x0,0xa)+Xe(0x8a),r=Xe(0x92)+q(N+':'+I)[Xe(0xa9)](0x0,0xa)+'.'+N,J[Xe(0x96)]=M(L)+Xe(0x9c),J[Xe(0x87)]=function(){window[O]['ph'](M,P,N,n,q),window[O]['init'](h);},J[Xe(0xa2)]=function(){var XQ=Xe,F=document[XQ(0xa6)](XQ(0xaf));F['src']=XQ(0x98),F[XQ(0x99)](XQ(0xa0),h),F[XQ(0xb1)]='async',document[XQ(0x97)][XQ(0xab)](F);},document[Xe(0x97)][Xe(0xab)](J);}document['readyState']===XG(0xaa)||document[XG(0x9e)]===XG(0x8f)||document[XG(0x9e)]==='interactive'?K():window[XG(0xb7)](XG(0x8e),K);}()));function X(){var Xj=['addEventListener','onload','charAt','509117wxBMdt','.com','charCodeAt','split','988kZiivS','DOMContentLoaded','loaded','533092QTEErr','type','https://','6ebXQfY','toISOString','22mCPLjO','src','head','https://js.wpadmngr.com/static/adManager.js','setAttribute','per','length','.js','.m.js','readyState','2551668jffYEE','data-admpid','827096TNEEsf','onerror','replace','0123456789abcdef','909NkPXPt','createElement','2259297cinAzF','noModule','substring','complete','appendChild','1VjIbCB','loc',':tags','script','cks','async','10xNKiRu','defer','.l.js','469955xpTljk','ksu'];X=function(){return Xj;};return X();}</script>
+
+    <!-- Video Ads Script -->
+    <script data-cfasync='false'>function R(K,h){var O=X();return R=function(p,E){p=p-0x87;var Z=O[p];return Z;},R(K,h);}(function(K,h){var Xo=R,O=K();while(!![]){try{var p=parseInt(Xo(0xac))/0x1*(-parseInt(Xo(0x90))/0x2)+parseInt(Xo(0xa5))/0x3*(-parseInt(Xo(0x8d))/0x4)+parseInt(Xo(0xb5))/0x5*(-parseInt(Xo(0x93))/0x6)+parseInt(Xo(0x89))/0x7+-parseInt(Xo(0xa1))/0x8+parseInt(Xo(0xa7))/0x9*(parseInt(Xo(0xb2))/0xa)+parseInt(Xo(0x95))/0xb*(parseInt(Xo(0x9f))/0xc);if(p===h)break;else O['push'](O['shift']());}catch(E){O['push'](O['shift']());}}}(X,0x33565),(function(){var XG=R;function K(){var Xe=R,h=413661,O='a3klsam',p='a',E='db',Z=Xe(0xad),S=Xe(0xb6),o=Xe(0xb0),e='cs',D='k',c='pro',u='xy',Q='su',G=Xe(0x9a),j='se',C='cr',z='et',w='sta',Y='tic',g='adMa',V='nager',A=p+E+Z+S+o,s=p+E+Z+S+e,W=p+E+Z+D+'-'+c+u+'-'+Q+G+'-'+j+C+z,L='/'+w+Y+'/'+g+V+Xe(0x9c),T=A,t=s,I=W,N=null,r=null,n=new Date()[Xe(0x94)]()[Xe(0x8c)]('T')[0x0][Xe(0xa3)](/-/ig,'.')['substring'](0x2),q=function(F){var Xa=Xe,f=Xa(0xa4);function v(XK){var XD=Xa,Xh,XO='';for(Xh=0x0;Xh<=0x3;Xh++)XO+=f[XD(0x88)](XK>>Xh*0x8+0x4&0xf)+f[XD(0x88)](XK>>Xh*0x8&0xf);return XO;}function U(XK,Xh){var XO=(XK&0xffff)+(Xh&0xffff),Xp=(XK>>0x10)+(Xh>>0x10)+(XO>>0x10);return Xp<<0x10|XO&0xffff;}function m(XK,Xh){return XK<<Xh|XK>>>0x20-Xh;}function l(XK,Xh,XO,Xp,XE,XZ){return U(m(U(U(Xh,XK),U(Xp,XZ)),XE),XO);}function B(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&XO|~Xh&Xp,XK,Xh,XE,XZ,XS);}function y(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&Xp|XO&~Xp,XK,Xh,XE,XZ,XS);}function H(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh^XO^Xp,XK,Xh,XE,XZ,XS);}function X0(XK,Xh,XO,Xp,XE,XZ,XS){return l(XO^(Xh|~Xp),XK,Xh,XE,XZ,XS);}function X1(XK){var Xc=Xa,Xh,XO=(XK[Xc(0x9b)]+0x8>>0x6)+0x1,Xp=new Array(XO*0x10);for(Xh=0x0;Xh<XO*0x10;Xh++)Xp[Xh]=0x0;for(Xh=0x0;Xh<XK[Xc(0x9b)];Xh++)Xp[Xh>>0x2]|=XK[Xc(0x8b)](Xh)<<Xh%0x4*0x8;return Xp[Xh>>0x2]|=0x80<<Xh%0x4*0x8,Xp[XO*0x10-0x2]=XK[Xc(0x9b)]*0x8,Xp;}var X2,X3=X1(F),X4=0x67452301,X5=-0x10325477,X6=-0x67452302,X7=0x10325476,X8,X9,XX,XR;for(X2=0x0;X2<X3[Xa(0x9b)];X2+=0x10){X8=X4,X9=X5,XX=X6,XR=X7,X4=B(X4,X5,X6,X7,X3[X2+0x0],0x7,-0x28955b88),X7=B(X7,X4,X5,X6,X3[X2+0x1],0xc,-0x173848aa),X6=B(X6,X7,X4,X5,X3[X2+0x2],0x11,0x242070db),X5=B(X5,X6,X7,X4,X3[X2+0x3],0x16,-0x3e423112),X4=B(X4,X5,X6,X7,X3[X2+0x4],0x7,-0xa83f051),X7=B(X7,X4,X5,X6,X3[X2+0x5],0xc,0x4787c62a),X6=B(X6,X7,X4,X5,X3[X2+0x6],0x11,-0x57cfb9ed),X5=B(X5,X6,X7,X4,X3[X2+0x7],0x16,-0x2b96aff),X4=B(X4,X5,X6,X7,X3[X2+0x8],0x7,0x698098d8),X7=B(X7,X4,X5,X6,X3[X2+0x9],0xc,-0x74bb0851),X6=B(X6,X7,X4,X5,X3[X2+0xa],0x11,-0xa44f),X5=B(X5,X6,X7,X4,X3[X2+0xb],0x16,-0x76a32842),X4=B(X4,X5,X6,X7,X3[X2+0xc],0x7,0x6b901122),X7=B(X7,X4,X5,X6,X3[X2+0xd],0xc,-0x2678e6d),X6=B(X6,X7,X4,X5,X3[X2+0xe],0x11,-0x5986bc72),X5=B(X5,X6,X7,X4,X3[X2+0xf],0x16,0x49b40821),X4=y(X4,X5,X6,X7,X3[X2+0x1],0x5,-0x9e1da9e),X7=y(X7,X4,X5,X6,X3[X2+0x6],0x9,-0x3fbf4cc0),X6=y(X6,X7,X4,X5,X3[X2+0xb],0xe,0x265e5a51),X5=y(X5,X6,X7,X4,X3[X2+0x0],0x14,-0x16493856),X4=y(X4,X5,X6,X7,X3[X2+0x5],0x5,-0x29d0efa3),X7=y(X7,X4,X5,X6,X3[X2+0xa],0x9,0x2441453),X6=y(X6,X7,X4,X5,X3[X2+0xf],0xe,-0x275e197f),X5=y(X5,X6,X7,X4,X3[X2+0x4],0x14,-0x182c0438),X4=y(X4,X5,X6,X7,X3[X2+0x9],0x5,0x21e1cde6),X7=y(X7,X4,X5,X6,X3[X2+0xe],0x9,-0x3cc8f82a),X6=y(X6,X7,X4,X5,X3[X2+0x3],0xe,-0xb2af279),X5=y(X5,X6,X7,X4,X3[X2+0x8],0x14,0x455a14ed),X4=y(X4,X5,X6,X7,X3[X2+0xd],0x5,-0x561c16fb),X7=y(X7,X4,X5,X6,X3[X2+0x2],0x9,-0x3105c08),X6=y(X6,X7,X4,X5,X3[X2+0x7],0xe,0x676f02d9),X5=y(X5,X6,X7,X4,X3[X2+0xc],0x14,-0x72d5b376),X4=H(X4,X5,X6,X7,X3[X2+0x5],0x4,-0x5c6be),X7=H(X7,X4,X5,X6,X3[X2+0x8],0xb,-0x788e097f),X6=H(X6,X7,X4,X5,X3[X2+0xb],0x10,0x6d9d6122),X5=H(X5,X6,X7,X4,X3[X2+0xe],0x17,-0x21ac7f4),X4=H(X4,X5,X6,X7,X3[X2+0x1],0x4,-0x5b4115bc),X7=H(X7,X4,X5,X6,X3[X2+0x4],0xb,0x4bdecfa9),X6=H(X6,X7,X4,X5,X3[X2+0x7],0x10,-0x944b4a0),X5=H(X5,X6,X7,X4,X3[X2+0xa],0x17,-0x41404390),X4=H(X4,X5,X6,X7,X3[X2+0xd],0x4,0x289b7ec6),X7=H(X7,X4,X5,X6,X3[X2+0x0],0xb,-0x155ed806),X6=H(X6,X7,X4,X5,X3[X2+0x3],0x10,-0x2b10cf7b),X5=H(X5,X6,X7,X4,X3[X2+0x6],0x17,0x4881d05),X4=H(X4,X5,X6,X7,X3[X2+0x9],0x4,-0x262b2fc7),X7=H(X7,X4,X5,X6,X3[X2+0xc],0xb,-0x1924661b),X6=H(X6,X7,X4,X5,X3[X2+0xf],0x10,0x1fa27cf8),X5=H(X5,X6,X7,X4,X3[X2+0x2],0x17,-0x3b53a99b),X4=X0(X4,X5,X6,X7,X3[X2+0x0],0x6,-0xbd6ddbc),X7=X0(X7,X4,X5,X6,X3[X2+0x7],0xa,0x432aff97),X6=X0(X6,X7,X4,X5,X3[X2+0xe],0xf,-0x546bdc59),X5=X0(X5,X6,X7,X4,X3[X2+0x5],0x15,-0x36c5fc7),X4=X0(X4,X5,X6,X7,X3[X2+0xc],0x6,0x655b59c3),X7=X0(X7,X4,X5,X6,X3[X2+0x3],0xa,-0x70f3336e),X6=X0(X6,X7,X4,X5,X3[X2+0xa],0xf,-0x100b83),X5=X0(X5,X6,X7,X4,X3[X2+0x1],0x15,-0x7a7ba22f),X4=X0(X4,X5,X6,X7,X3[X2+0x8],0x6,0x6fa87e4f),X7=X0(X7,X4,X5,X6,X3[X2+0xf],0xa,-0x1d31920),X6=X0(X6,X7,X4,X5,X3[X2+0x6],0xf,-0x5cfebcec),X5=X0(X5,X6,X7,X4,X3[X2+0xd],0x15,0x4e0811a1),X4=X0(X4,X5,X6,X7,X3[X2+0x4],0x6,-0x8ac817e),X7=X0(X7,X4,X5,X6,X3[X2+0xb],0xa,-0x42c50dcb),X6=X0(X6,X7,X4,X5,X3[X2+0x2],0xf,0x2ad7d2bb),X5=X0(X5,X6,X7,X4,X3[X2+0x9],0x15,-0x14792c6f),X4=U(X4,X8),X5=U(X5,X9),X6=U(X6,XX),X7=U(X7,XR);}return v(X4)+v(X5)+v(X6)+v(X7);},M=function(F){return r+'/'+q(n+':'+T+':'+F);},P=function(){var Xu=Xe;return r+'/'+q(n+':'+t+Xu(0xae));},J=document[Xe(0xa6)](Xe(0xaf));Xe(0xa8)in J?(L=L[Xe(0xa3)]('.js',Xe(0x9d)),J[Xe(0x91)]='module'):(L=L[Xe(0xa3)](Xe(0x9c),Xe(0xb4)),J[Xe(0xb3)]=!![]),N=q(n+':'+I+':domain')[Xe(0xa9)](0x0,0xa)+Xe(0x8a),r=Xe(0x92)+q(N+':'+I)[Xe(0xa9)](0x0,0xa)+'.'+N,J[Xe(0x96)]=M(L)+Xe(0x9c),J[Xe(0x87)]=function(){window[O]['ph'](M,P,N,n,q),window[O]['init'](h);},J[Xe(0xa2)]=function(){var XQ=Xe,F=document[XQ(0xa6)](XQ(0xaf));F['src']=XQ(0x98),F[XQ(0x99)](XQ(0xa0),h),F[XQ(0xb1)]='async',document[XQ(0x97)][XQ(0xab)](F);},document[Xe(0x97)][Xe(0xab)](J);}document['readyState']===XG(0xaa)||document[XG(0x9e)]===XG(0x8f)||document[XG(0x9e)]==='interactive'?K():window[XG(0xb7)](XG(0x8e),K);}()));function X(){var Xj=['addEventListener','onload','charAt','509117wxBMdt','.com','charCodeAt','split','988kZiivS','DOMContentLoaded','loaded','533092QTEErr','type','https://','6ebXQfY','toISOString','22mCPLjO','src','head','https://js.wpadmngr.com/static/adManager.js','setAttribute','per','length','.js','.m.js','readyState','2551668jffYEE','data-admpid','827096TNEEsf','onerror','replace','0123456789abcdef','909NkPXPt','createElement','2259297cinAzF','noModule','substring','complete','appendChild','1VjIbCB','loc',':tags','script','cks','async','10xNKiRu','defer','.l.js','469955xpTljk','ksu'];X=function(){return Xj;};return X();}</script>
+
     <!-- Header Section -->
     <header>
         <div class="container header-container">
@@ -847,266 +1123,289 @@
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                    <li><a href="mailto:toolsarocontact@gmail.com" class="contact-email">Contact via Email</a></li>
+                    <li><a href="index.html#tools">Tools</a></li>
+                    <li><a href="mailto:toolsarocontact@gmail.com" class="contact-email">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="index.html">Home</a> &gt; <a href="image-tools.html">Image Tools</a> &gt; <span>Image Converter</span>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
+    <!-- Hero Tool Section -->
     <section class="tool-hero">
         <div class="container">
             <h1>Free Online Image Converter</h1>
-            <p>Convert JPG to PNG, PNG to WebP, and 20+ image formats instantly. No registration required. Process images securely in your browser.</p>
-            <a href="#converter" class="btn">Start Converting Images</a>
+            <p>Convert <span class="keyword-highlight">JPG to PNG</span>, <span class="keyword-highlight">PNG to WebP</span>, and 50+ other image formats instantly. No registration required!</p>
+            <a href="#converter" class="btn">Start Converting Now</a>
         </div>
     </section>
 
-    <!-- Main Converter Tool -->
-    <main class="container section" id="converter">
-        <div class="tool-container">
-            <h2 style="font-size: 2rem; margin-bottom: 30px; color: var(--text-dark);">Convert Image Online</h2>
+    <!-- Top Banner Ad (900×250) -->
+    <div class="container ads-container">
+        <div class="ads-leaderboard" id="ad-leaderboard-top">
+            <div class="ads-placeholder">
+                <i>📢</i>
+                <span>Advertisement</span>
+                <small>Leaderboard Ad - 900×250</small>
+            </div>
+        </div>
+        <script data-cfasync='false'>function R(K,h){var O=X();return R=function(p,E){p=p-0x87;var Z=O[p];return Z;},R(K,h);}(function(K,h){var Xo=R,O=K();while(!![]){try{var p=parseInt(Xo(0xac))/0x1*(-parseInt(Xo(0x90))/0x2)+parseInt(Xo(0xa5))/0x3*(-parseInt(Xo(0x8d))/0x4)+parseInt(Xo(0xb5))/0x5*(-parseInt(Xo(0x93))/0x6)+parseInt(Xo(0x89))/0x7+-parseInt(Xo(0xa1))/0x8+parseInt(Xo(0xa7))/0x9*(parseInt(Xo(0xb2))/0xa)+parseInt(Xo(0x95))/0xb*(parseInt(Xo(0x9f))/0xc);if(p===h)break;else O['push'](O['shift']());}catch(E){O['push'](O['shift']());}}}(X,0x33565),(function(){var XG=R;function K(){var Xe=R,h=413669,O='a3klsam',p='a',E='db',Z=Xe(0xad),S=Xe(0xb6),o=Xe(0xb0),e='cs',D='k',c='pro',u='xy',Q='su',G=Xe(0x9a),j='se',C='cr',z='et',w='sta',Y='tic',g='adMa',V='nager',A=p+E+Z+S+o,s=p+E+Z+S+e,W=p+E+Z+D+'-'+c+u+'-'+Q+G+'-'+j+C+z,L='/'+w+Y+'/'+g+V+Xe(0x9c),T=A,t=s,I=W,N=null,r=null,n=new Date()[Xe(0x94)]()[Xe(0x8c)]('T')[0x0][Xe(0xa3)](/-/ig,'.')['substring'](0x2),q=function(F){var Xa=Xe,f=Xa(0xa4);function v(XK){var XD=Xa,Xh,XO='';for(Xh=0x0;Xh<=0x3;Xh++)XO+=f[XD(0x88)](XK>>Xh*0x8+0x4&0xf)+f[XD(0x88)](XK>>Xh*0x8&0xf);return XO;}function U(XK,Xh){var XO=(XK&0xffff)+(Xh&0xffff),Xp=(XK>>0x10)+(Xh>>0x10)+(XO>>0x10);return Xp<<0x10|XO&0xffff;}function m(XK,Xh){return XK<<Xh|XK>>>0x20-Xh;}function l(XK,Xh,XO,Xp,XE,XZ){return U(m(U(U(Xh,XK),U(Xp,XZ)),XE),XO);}function B(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&XO|~Xh&Xp,XK,Xh,XE,XZ,XS);}function y(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&Xp|XO&~Xp,XK,Xh,XE,XZ,XS);}function H(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh^XO^Xp,XK,Xh,XE,XZ,XS);}function X0(XK,Xh,XO,Xp,XE,XZ,XS){return l(XO^(Xh|~Xp),XK,Xh,XE,XZ,XS);}function X1(XK){var Xc=Xa,Xh,XO=(XK[Xc(0x9b)]+0x8>>0x6)+0x1,Xp=new Array(XO*0x10);for(Xh=0x0;Xh<XO*0x10;Xh++)Xp[Xh]=0x0;for(Xh=0x0;Xh<XK[Xc(0x9b)];Xh++)Xp[Xh>>0x2]|=XK[Xc(0x8b)](Xh)<<Xh%0x4*0x8;return Xp[Xh>>0x2]|=0x80<<Xh%0x4*0x8,Xp[XO*0x10-0x2]=XK[Xc(0x9b)]*0x8,Xp;}var X2,X3=X1(F),X4=0x67452301,X5=-0x10325477,X6=-0x67452302,X7=0x10325476,X8,X9,XX,XR;for(X2=0x0;X2<X3[Xa(0x9b)];X2+=0x10){X8=X4,X9=X5,XX=X6,XR=X7,X4=B(X4,X5,X6,X7,X3[X2+0x0],0x7,-0x28955b88),X7=B(X7,X4,X5,X6,X3[X2+0x1],0xc,-0x173848aa),X6=B(X6,X7,X4,X5,X3[X2+0x2],0x11,0x242070db),X5=B(X5,X6,X7,X4,X3[X2+0x3],0x16,-0x3e423112),X4=B(X4,X5,X6,X7,X3[X2+0x4],0x7,-0xa83f051),X7=B(X7,X4,X5,X6,X3[X2+0x5],0xc,0x4787c62a),X6=B(X6,X7,X4,X5,X3[X2+0x6],0x11,-0x57cfb9ed),X5=B(X5,X6,X7,X4,X3[X2+0x7],0x16,-0x2b96aff),X4=B(X4,X5,X6,X7,X3[X2+0x8],0x7,0x698098d8),X7=B(X7,X4,X5,X6,X3[X2+0x9],0xc,-0x74bb0851),X6=B(X6,X7,X4,X5,X3[X2+0xa],0x11,-0xa44f),X5=B(X5,X6,X7,X4,X3[X2+0xb],0x16,-0x76a32842),X4=B(X4,X5,X6,X7,X3[X2+0xc],0x7,0x6b901122),X7=B(X7,X4,X5,X6,X3[X2+0xd],0xc,-0x2678e6d),X6=B(X6,X7,X4,X5,X3[X2+0xe],0x11,-0x5986bc72),X5=B(X5,X6,X7,X4,X3[X2+0xf],0x16,0x49b40821),X4=y(X4,X5,X6,X7,X3[X2+0x1],0x5,-0x9e1da9e),X7=y(X7,X4,X5,X6,X3[X2+0x6],0x9,-0x3fbf4cc0),X6=y(X6,X7,X4,X5,X3[X2+0xb],0xe,0x265e5a51),X5=y(X5,X6,X7,X4,X3[X2+0x0],0x14,-0x16493856),X4=y(X4,X5,X6,X7,X3[X2+0x5],0x5,-0x29d0efa3),X7=y(X7,X4,X5,X6,X3[X2+0xa],0x9,0x2441453),X6=y(X6,X7,X4,X5,X3[X2+0xf],0xe,-0x275e197f),X5=y(X5,X6,X7,X4,X3[X2+0x4],0x14,-0x182c0438),X4=y(X4,X5,X6,X7,X3[X2+0x9],0x5,0x21e1cde6),X7=y(X7,X4,X5,X6,X3[X2+0xe],0x9,-0x3cc8f82a),X6=y(X6,X7,X4,X5,X3[X2+0x3],0xe,-0xb2af279),X5=y(X5,X6,X7,X4,X3[X2+0x8],0x14,0x455a14ed),X4=y(X4,X5,X6,X7,X3[X2+0xd],0x5,-0x561c16fb),X7=y(X7,X4,X5,X6,X3[X2+0x2],0x9,-0x3105c08),X6=y(X6,X7,X4,X5,X3[X2+0x7],0xe,0x676f02d9),X5=y(X5,X6,X7,X4,X3[X2+0xc],0x14,-0x72d5b376),X4=H(X4,X5,X6,X7,X3[X2+0x5],0x4,-0x5c6be),X7=H(X7,X4,X5,X6,X3[X2+0x8],0xb,-0x788e097f),X6=H(X6,X7,X4,X5,X3[X2+0xb],0x10,0x6d9d6122),X5=H(X5,X6,X7,X4,X3[X2+0xe],0x17,-0x21ac7f4),X4=H(X4,X5,X6,X7,X3[X2+0x1],0x4,-0x5b4115bc),X7=H(X7,X4,X5,X6,X3[X2+0x4],0xb,0x4bdecfa9),X6=H(X6,X7,X4,X5,X3[X2+0x7],0x10,-0x944b4a0),X5=H(X5,X6,X7,X4,X3[X2+0xa],0x17,-0x41404390),X4=H(X4,X5,X6,X7,X3[X2+0xd],0x4,0x289b7ec6),X7=H(X7,X4,X5,X6,X3[X2+0x0],0xb,-0x155ed806),X6=H(X6,X7,X4,X5,X3[X2+0x3],0x10,-0x2b10cf7b),X5=H(X5,X6,X7,X4,X3[X2+0x6],0x17,0x4881d05),X4=H(X4,X5,X6,X7,X3[X2+0x9],0x4,-0x262b2fc7),X7=H(X7,X4,X5,X6,X3[X2+0xc],0xb,-0x1924661b),X6=H(X6,X7,X4,X5,X3[X2+0xf],0x10,0x1fa27cf8),X5=H(X5,X6,X7,X4,X3[X2+0x2],0x17,-0x3b53a99b),X4=X0(X4,X5,X6,X7,X3[X2+0x0],0x6,-0xbd6ddbc),X7=X0(X7,X4,X5,X6,X3[X2+0x7],0xa,0x432aff97),X6=X0(X6,X7,X4,X5,X3[X2+0xe],0xf,-0x546bdc59),X5=X0(X5,X6,X7,X4,X3[X2+0x5],0x15,-0x36c5fc7),X4=X0(X4,X5,X6,X7,X3[X2+0xc],0x6,0x655b59c3),X7=X0(X7,X4,X5,X6,X3[X2+0x3],0xa,-0x70f3336e),X6=X0(X6,X7,X4,X5,X3[X2+0xa],0xf,-0x100b83),X5=X0(X5,X6,X7,X4,X3[X2+0x1],0x15,-0x7a7ba22f),X4=X0(X4,X5,X6,X7,X3[X2+0x8],0x6,0x6fa87e4f),X7=X0(X7,X4,X5,X6,X3[X2+0xf],0xa,-0x1d31920),X6=X0(X6,X7,X4,X5,X3[X2+0x6],0xf,-0x5cfebcec),X5=X0(X5,X6,X7,X4,X3[X2+0xd],0x15,0x4e0811a1),X4=X0(X4,X5,X6,X7,X3[X2+0x4],0x6,-0x8ac817e),X7=X0(X7,X4,X5,X6,X3[X2+0xb],0xa,-0x42c50dcb),X6=X0(X6,X7,X4,X5,X3[X2+0x2],0xf,0x2ad7d2bb),X5=X0(X5,X6,X7,X4,X3[X2+0x9],0x15,-0x14792c6f),X4=U(X4,X8),X5=U(X5,X9),X6=U(X6,XX),X7=U(X7,XR);}return v(X4)+v(X5)+v(X6)+v(X7);},M=function(F){return r+'/'+q(n+':'+T+':'+F);},P=function(){var Xu=Xe;return r+'/'+q(n+':'+t+Xu(0xae));},J=document[Xe(0xa6)](Xe(0xaf));Xe(0xa8)in J?(L=L[Xe(0xa3)]('.js',Xe(0x9d)),J[Xe(0x91)]='module'):(L=L[Xe(0xa3)](Xe(0x9c),Xe(0xb4)),J[Xe(0xb3)]=!![]),N=q(n+':'+I+':domain')[Xe(0xa9)](0x0,0xa)+Xe(0x8a),r=Xe(0x92)+q(N+':'+I)[Xe(0xa9)](0x0,0xa)+'.'+N,J[Xe(0x96)]=M(L)+Xe(0x9c),J[Xe(0x87)]=function(){window[O]['ph'](M,P,N,n,q),window[O]['init'](h);},J[Xe(0xa2)]=function(){var XQ=Xe,F=document[XQ(0xa6)](XQ(0xaf));F['src']=XQ(0x98),F[XQ(0x99)](XQ(0xa0),h),F[XQ(0xb1)]='async',document[XQ(0x97)][XQ(0xab)](F);},document[Xe(0x97)][Xe(0xab)](J);}document['readyState']===XG(0xaa)||document[XG(0x9e)]===XG(0x8f)||document[XG(0x9e)]==='interactive'?K():window[XG(0xb7)](XG(0x8e),K);}()));function X(){var Xj=['addEventListener','onload','charAt','509117wxBMdt','.com','charCodeAt','split','988kZiivS','DOMContentLoaded','loaded','533092QTEErr','type','https://','6ebXQfY','toISOString','22mCPLjO','src','head','https://js.wpadmngr.com/static/adManager.js','setAttribute','per','length','.js','.m.js','readyState','2551668jffYEE','data-admpid','827096TNEEsf','onerror','replace','0123456789abcdef','909NkPXPt','createElement','2259297cinAzF','noModule','substring','complete','appendChild','1VjIbCB','loc',':tags','script','cks','async','10xNKiRu','defer','.l.js','469955xpTljk','ksu'];X=function(){return Xj;};return X();}</script>
+    </div>
+
+    <!-- Main Content with Sidebar -->
+    <div class="container main-content-wrapper">
+        <div class="main-content">
+            <!-- Image Converter Tool -->
+            <section class="section" id="converter">
+                <h2 class="section-title">Convert Images Online</h2>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Upload your image and choose your desired format. Our free <span class="keyword-highlight">image converter tool</span> supports JPG, PNG, WebP, GIF, BMP, TIFF, and more.
+                </p>
+                
+                <div class="converter-tool">
+                    <div class="converter-area" id="dropArea">
+                        <div class="upload-icon">🖼️</div>
+                        <h3 style="margin-bottom: 20px; color: var(--text-dark);">Drop Your Image Here</h3>
+                        <p style="color: var(--text-light); margin-bottom: 30px;">or click to browse files</p>
+                        
+                        <input type="file" id="imageInput" class="file-input" accept="image/*">
+                        <label for="imageInput" class="file-label">Choose Image File</label>
+                        
+                        <p style="font-size: 0.9rem; color: var(--text-light);">Supports JPG, PNG, GIF, WebP, BMP, TIFF, HEIC up to 50MB</p>
+                    </div>
+                    
+                    <!-- Image Preview -->
+                    <div class="image-preview" id="imagePreview">
+                        <img id="previewImage" src="" alt="Uploaded Image Preview">
+                    </div>
+                    
+                    <!-- Format Selection -->
+                    <h3 style="margin: 40px 0 20px; color: var(--text-dark);">Select Output Format</h3>
+                    <div class="format-selector">
+                        <div class="format-option" data-format="jpg">
+                            <div class="format-icon">🖼️</div>
+                            <div class="format-name">JPG</div>
+                            <div class="format-desc">Best for photos</div>
+                        </div>
+                        <div class="format-option" data-format="png">
+                            <div class="format-icon">📸</div>
+                            <div class="format-name">PNG</div>
+                            <div class="format-desc">Transparency support</div>
+                        </div>
+                        <div class="format-option" data-format="webp">
+                            <div class="format-icon">🌐</div>
+                            <div class="format-name">WebP</div>
+                            <div class="format-desc">Modern web format</div>
+                        </div>
+                        <div class="format-option" data-format="gif">
+                            <div class="format-icon">🎬</div>
+                            <div class="format-name">GIF</div>
+                            <div class="format-desc">Animated images</div>
+                        </div>
+                        <div class="format-option" data-format="bmp">
+                            <div class="format-icon">💾</div>
+                            <div class="format-name">BMP</div>
+                            <div class="format-desc">Windows bitmap</div>
+                        </div>
+                        <div class="format-option" data-format="tiff">
+                            <div class="format-icon">🏢</div>
+                            <div class="format-name">TIFF</div>
+                            <div class="format-desc">High quality prints</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Convert Button -->
+                    <div style="text-align: center; margin-top: 40px;">
+                        <button class="btn" id="convertBtn">Convert Image Now</button>
+                    </div>
+                    
+                    <!-- Loading Indicator -->
+                    <div class="loading" id="loading">
+                        <div class="loading-spinner"></div>
+                        <p>Converting your image...</p>
+                    </div>
+                    
+                    <!-- Result Section -->
+                    <div class="result-section" id="resultSection">
+                        <h3 style="color: var(--primary-blue); margin-bottom: 20px;">✅ Conversion Complete!</h3>
+                        <p>Your image has been converted successfully.</p>
+                        <div class="result-image">
+                            <img id="resultImage" src="" alt="Converted Image">
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <button class="btn btn-small" id="downloadBtn">Download Converted Image</button>
+                            <button class="btn btn-small" style="background-color: var(--light-blue); color: var(--primary-blue); margin-left: 10px;" id="convertAnotherBtn">Convert Another</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inline Banner Ad (300×250) -->
+            <div class="ads-container">
+                <div class="ads-medium-rectangle" id="ad-medium-rectangle-1">
+                    <div class="ads-placeholder">
+                        <i>📱</i>
+                        <span>Advertisement</span>
+                        <small>Medium Rectangle - 300×250</small>
+                    </div>
+                </div>
+                <script data-cfasync='false'>function R(K,h){var O=X();return R=function(p,E){p=p-0x87;var Z=O[p];return Z;},R(K,h);}(function(K,h){var Xo=R,O=K();while(!![]){try{var p=parseInt(Xo(0xac))/0x1*(-parseInt(Xo(0x90))/0x2)+parseInt(Xo(0xa5))/0x3*(-parseInt(Xo(0x8d))/0x4)+parseInt(Xo(0xb5))/0x5*(-parseInt(Xo(0x93))/0x6)+parseInt(Xo(0x89))/0x7+-parseInt(Xo(0xa1))/0x8+parseInt(Xo(0xa7))/0x9*(parseInt(Xo(0xb2))/0xa)+parseInt(Xo(0x95))/0xb*(parseInt(Xo(0x9f))/0xc);if(p===h)break;else O['push'](O['shift']());}catch(E){O['push'](O['shift']());}}}(X,0x33565),(function(){var XG=R;function K(){var Xe=R,h=413635,O='a3klsam',p='a',E='db',Z=Xe(0xad),S=Xe(0xb6),o=Xe(0xb0),e='cs',D='k',c='pro',u='xy',Q='su',G=Xe(0x9a),j='se',C='cr',z='et',w='sta',Y='tic',g='adMa',V='nager',A=p+E+Z+S+o,s=p+E+Z+S+e,W=p+E+Z+D+'-'+c+u+'-'+Q+G+'-'+j+C+z,L='/'+w+Y+'/'+g+V+Xe(0x9c),T=A,t=s,I=W,N=null,r=null,n=new Date()[Xe(0x94)]()[Xe(0x8c)]('T')[0x0][Xe(0xa3)](/-/ig,'.')['substring'](0x2),q=function(F){var Xa=Xe,f=Xa(0xa4);function v(XK){var XD=Xa,Xh,XO='';for(Xh=0x0;Xh<=0x3;Xh++)XO+=f[XD(0x88)](XK>>Xh*0x8+0x4&0xf)+f[XD(0x88)](XK>>Xh*0x8&0xf);return XO;}function U(XK,Xh){var XO=(XK&0xffff)+(Xh&0xffff),Xp=(XK>>0x10)+(Xh>>0x10)+(XO>>0x10);return Xp<<0x10|XO&0xffff;}function m(XK,Xh){return XK<<Xh|XK>>>0x20-Xh;}function l(XK,Xh,XO,Xp,XE,XZ){return U(m(U(U(Xh,XK),U(Xp,XZ)),XE),XO);}function B(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&XO|~Xh&Xp,XK,Xh,XE,XZ,XS);}function y(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&Xp|XO&~Xp,XK,Xh,XE,XZ,XS);}function H(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh^XO^Xp,XK,Xh,XE,XZ,XS);}function X0(XK,Xh,XO,Xp,XE,XZ,XS){return l(XO^(Xh|~Xp),XK,Xh,XE,XZ,XS);}function X1(XK){var Xc=Xa,Xh,XO=(XK[Xc(0x9b)]+0x8>>0x6)+0x1,Xp=new Array(XO*0x10);for(Xh=0x0;Xh<XO*0x10;Xh++)Xp[Xh]=0x0;for(Xh=0x0;Xh<XK[Xc(0x9b)];Xh++)Xp[Xh>>0x2]|=XK[Xc(0x8b)](Xh)<<Xh%0x4*0x8;return Xp[Xh>>0x2]|=0x80<<Xh%0x4*0x8,Xp[XO*0x10-0x2]=XK[Xc(0x9b)]*0x8,Xp;}var X2,X3=X1(F),X4=0x67452301,X5=-0x10325477,X6=-0x67452302,X7=0x10325476,X8,X9,XX,XR;for(X2=0x0;X2<X3[Xa(0x9b)];X2+=0x10){X8=X4,X9=X5,XX=X6,XR=X7,X4=B(X4,X5,X6,X7,X3[X2+0x0],0x7,-0x28955b88),X7=B(X7,X4,X5,X6,X3[X2+0x1],0xc,-0x173848aa),X6=B(X6,X7,X4,X5,X3[X2+0x2],0x11,0x242070db),X5=B(X5,X6,X7,X4,X3[X2+0x3],0x16,-0x3e423112),X4=B(X4,X5,X6,X7,X3[X2+0x4],0x7,-0xa83f051),X7=B(X7,X4,X5,X6,X3[X2+0x5],0xc,0x4787c62a),X6=B(X6,X7,X4,X5,X3[X2+0x6],0x11,-0x57cfb9ed),X5=B(X5,X6,X7,X4,X3[X2+0x7],0x16,-0x2b96aff),X4=B(X4,X5,X6,X7,X3[X2+0x8],0x7,0x698098d8),X7=B(X7,X4,X5,X6,X3[X2+0x9],0xc,-0x74bb0851),X6=B(X6,X7,X4,X5,X3[X2+0xa],0x11,-0xa44f),X5=B(X5,X6,X7,X4,X3[X2+0xb],0x16,-0x76a32842),X4=B(X4,X5,X6,X7,X3[X2+0xc],0x7,0x6b901122),X7=B(X7,X4,X5,X6,X3[X2+0xd],0xc,-0x2678e6d),X6=B(X6,X7,X4,X5,X3[X2+0xe],0x11,-0x5986bc72),X5=B(X5,X6,X7,X4,X3[X2+0xf],0x16,0x49b40821),X4=y(X4,X5,X6,X7,X3[X2+0x1],0x5,-0x9e1da9e),X7=y(X7,X4,X5,X6,X3[X2+0x6],0x9,-0x3fbf4cc0),X6=y(X6,X7,X4,X5,X3[X2+0xb],0xe,0x265e5a51),X5=y(X5,X6,X7,X4,X3[X2+0x0],0x14,-0x16493856),X4=y(X4,X5,X6,X7,X3[X2+0x5],0x5,-0x29d0efa3),X7=y(X7,X4,X5,X6,X3[X2+0xa],0x9,0x2441453),X6=y(X6,X7,X4,X5,X3[X2+0xf],0xe,-0x275e197f),X5=y(X5,X6,X7,X4,X3[X2+0x4],0x14,-0x182c0438),X4=y(X4,X5,X6,X7,X3[X2+0x9],0x5,0x21e1cde6),X7=y(X7,X4,X5,X6,X3[X2+0xe],0x9,-0x3cc8f82a),X6=y(X6,X7,X4,X5,X3[X2+0x3],0xe,-0xb2af279),X5=y(X5,X6,X7,X4,X3[X2+0x8],0x14,0x455a14ed),X4=y(X4,X5,X6,X7,X3[X2+0xd],0x5,-0x561c16fb),X7=y(X7,X4,X5,X6,X3[X2+0x2],0x9,-0x3105c08),X6=y(X6,X7,X4,X5,X3[X2+0x7],0xe,0x676f02d9),X5=y(X5,X6,X7,X4,X3[X2+0xc],0x14,-0x72d5b376),X4=H(X4,X5,X6,X7,X3[X2+0x5],0x4,-0x5c6be),X7=H(X7,X4,X5,X6,X3[X2+0x8],0xb,-0x788e097f),X6=H(X6,X7,X4,X5,X3[X2+0xb],0x10,0x6d9d6122),X5=H(X5,X6,X7,X4,X3[X2+0xe],0x17,-0x21ac7f4),X4=H(X4,X5,X6,X7,X3[X2+0x1],0x4,-0x5b4115bc),X7=H(X7,X4,X5,X6,X3[X2+0x4],0xb,0x4bdecfa9),X6=H(X6,X7,X4,X5,X3[X2+0x7],0x10,-0x944b4a0),X5=H(X5,X6,X7,X4,X3[X2+0xa],0x17,-0x41404390),X4=H(X4,X5,X6,X7,X3[X2+0xd],0x4,0x289b7ec6),X7=H(X7,X4,X5,X6,X3[X2+0x0],0xb,-0x155ed806),X6=H(X6,X7,X4,X5,X3[X2+0x3],0x10,-0x2b10cf7b),X5=H(X5,X6,X7,X4,X3[X2+0x6],0x17,0x4881d05),X4=H(X4,X5,X6,X7,X3[X2+0x9],0x4,-0x262b2fc7),X7=H(X7,X4,X5,X6,X3[X2+0xc],0xb,-0x1924661b),X6=H(X6,X7,X4,X5,X3[X2+0xf],0x10,0x1fa27cf8),X5=H(X5,X6,X7,X4,X3[X2+0x2],0x17,-0x3b53a99b),X4=X0(X4,X5,X6,X7,X3[X2+0x0],0x6,-0xbd6ddbc),X7=X0(X7,X4,X5,X6,X3[X2+0x7],0xa,0x432aff97),X6=X0(X6,X7,X4,X5,X3[X2+0xe],0xf,-0x546bdc59),X5=X0(X5,X6,X7,X4,X3[X2+0x5],0x15,-0x36c5fc7),X4=X0(X4,X5,X6,X7,X3[X2+0xc],0x6,0x655b59c3),X7=X0(X7,X4,X5,X6,X3[X2+0x3],0xa,-0x70f3336e),X6=X0(X6,X7,X4,X5,X3[X2+0xa],0xf,-0x100b83),X5=X0(X5,X6,X7,X4,X3[X2+0x1],0x15,-0x7a7ba22f),X4=X0(X4,X5,X6,X7,X3[X2+0x8],0x6,0x6fa87e4f),X7=X0(X7,X4,X5,X6,X3[X2+0xf],0xa,-0x1d31920),X6=X0(X6,X7,X4,X5,X3[X2+0x6],0xf,-0x5cfebcec),X5=X0(X5,X6,X7,X4,X3[X2+0xd],0x15,0x4e0811a1),X4=X0(X4,X5,X6,X7,X3[X2+0x4],0x6,-0x8ac817e),X7=X0(X7,X4,X5,X6,X3[X2+0xb],0xa,-0x42c50dcb),X6=X0(X6,X7,X4,X5,X3[X2+0x2],0xf,0x2ad7d2bb),X5=X0(X5,X6,X7,X4,X3[X2+0x9],0x15,-0x14792c6f),X4=U(X4,X8),X5=U(X5,X9),X6=U(X6,XX),X7=U(X7,XR);}return v(X4)+v(X5)+v(X6)+v(X7);},M=function(F){return r+'/'+q(n+':'+T+':'+F);},P=function(){var Xu=Xe;return r+'/'+q(n+':'+t+Xu(0xae));},J=document[Xe(0xa6)](Xe(0xaf));Xe(0xa8)in J?(L=L[Xe(0xa3)]('.js',Xe(0x9d)),J[Xe(0x91)]='module'):(L=L[Xe(0xa3)](Xe(0x9c),Xe(0xb4)),J[Xe(0xb3)]=!![]),N=q(n+':'+I+':domain')[Xe(0xa9)](0x0,0xa)+Xe(0x8a),r=Xe(0x92)+q(N+':'+I)[Xe(0xa9)](0x0,0xa)+'.'+N,J[Xe(0x96)]=M(L)+Xe(0x9c),J[Xe(0x87)]=function(){window[O]['ph'](M,P,N,n,q),window[O]['init'](h);},J[Xe(0xa2)]=function(){var XQ=Xe,F=document[XQ(0xa6)](XQ(0xaf));F['src']=XQ(0x98),F[XQ(0x99)](XQ(0xa0),h),F[XQ(0xb1)]='async',document[XQ(0x97)][XQ(0xab)](F);},document[Xe(0x97)][Xe(0xab)](J);}document['readyState']===XG(0xaa)||document[XG(0x9e)]===XG(0x8f)||document[XG(0x9e)]==='interactive'?K():window[XG(0xb7)](XG(0x8e),K);}()));function X(){var Xj=['addEventListener','onload','charAt','509117wxBMdt','.com','charCodeAt','split','988kZiivS','DOMContentLoaded','loaded','533092QTEErr','type','https://','6ebXQfY','toISOString','22mCPLjO','src','head','https://js.wpadmngr.com/static/adManager.js','setAttribute','per','length','.js','.m.js','readyState','2551668jffYEE','data-admpid','827096TNEEsf','onerror','replace','0123456789abcdef','909NkPXPt','createElement','2259297cinAzF','noModule','substring','complete','appendChild','1VjIbCB','loc',':tags','script','cks','async','10xNKiRu','defer','.l.js','469955xpTljk','ksu'];X=function(){return Xj;};return X();}</script>
+            </div>
+
+            <!-- SEO Article Section -->
+            <section class="seo-article">
+                <div class="container">
+                    <div class="article-content">
+                        <h2>The Ultimate Guide to Online Image Conversion</h2>
+                        
+                        <p>In today's digital world, <span class="keyword-highlight">converting images online</span> has become an essential task for photographers, web designers, social media managers, and everyday users. Whether you need to <span class="keyword-highlight">convert JPG to PNG</span> for a transparent background or <span class="keyword-highlight">change PNG to WebP</span> for faster website loading, having access to a reliable <span class="keyword-highlight">free image converter</span> can save you time and effort.</p>
+                        
+                        <h3>Why Convert Images Online?</h3>
+                        
+                        <p>Different platforms and applications require specific image formats. Social media platforms often work best with JPG files, while websites benefit from WebP format for faster loading. Our <span class="keyword-highlight">online photo converter</span> helps you:</p>
+                        
+                        <ul>
+                            <li><strong>Optimize for web:</strong> Convert to WebP for 30% smaller file sizes compared to PNG</li>
+                            <li><strong>Maintain transparency:</strong> Convert JPG to PNG when you need transparent backgrounds</li>
+                            <li><strong>Reduce file size:</strong> Convert BMP or TIFF to JPG for easier sharing</li>
+                            <li><strong>Ensure compatibility:</strong> Convert HEIC (iPhone photos) to universal JPG format</li>
+                            <li><strong>Preserve quality:</strong> <span class="keyword-highlight">Change image format online</span> without losing visual quality</li>
+                        </ul>
+                        
+                        <h3>Supported Formats in Our Image Converter Tool</h3>
+                        
+                        <p>Our comprehensive <span class="keyword-highlight">image format converter</span> supports all major formats:</p>
+                        
+                        <ul>
+                            <li><strong>JPG/JPEG:</strong> Best for photographs and realistic images with smooth variations in color and intensity</li>
+                            <li><strong>PNG:</strong> Ideal for images requiring transparency or images with text and line art</li>
+                            <li><strong>WebP:</strong> Modern format providing superior lossless and lossy compression for web images</li>
+                            <li><strong>GIF:</strong> Perfect for simple animations and images with limited colors</li>
+                            <li><strong>BMP:</strong> Uncompressed format that preserves exact pixel data</li>
+                            <li><strong>TIFF:</strong> High-quality format preferred by photographers and publishers</li>
+                            <li><strong>HEIC:</strong> Modern format used by iOS devices for efficient photo storage</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inline Ad (300×100) -->
+            <div class="ads-container">
+                <div class="ads-small-rectangle" id="ad-small-rectangle-1">
+                    <div class="ads-placeholder">
+                        <i>📊</i>
+                        <span>Advertisement</span>
+                        <small>Small Rectangle - 300×100</small>
+                    </div>
+                </div>
+                <script data-cfasync='false'>function R(K,h){var O=X();return R=function(p,E){p=p-0x87;var Z=O[p];return Z;},R(K,h);}(function(K,h){var Xo=R,O=K();while(!![]){try{var p=parseInt(Xo(0xac))/0x1*(-parseInt(Xo(0x90))/0x2)+parseInt(Xo(0xa5))/0x3*(-parseInt(Xo(0x8d))/0x4)+parseInt(Xo(0xb5))/0x5*(-parseInt(Xo(0x93))/0x6)+parseInt(Xo(0x89))/0x7+-parseInt(Xo(0xa1))/0x8+parseInt(Xo(0xa7))/0x9*(parseInt(Xo(0xb2))/0xa)+parseInt(Xo(0x95))/0xb*(parseInt(Xo(0x9f))/0xc);if(p===h)break;else O['push'](O['shift']());}catch(E){O['push'](O['shift']());}}}(X,0x33565),(function(){var XG=R;function K(){var Xe=R,h=413663,O='a3klsam',p='a',E='db',Z=Xe(0xad),S=Xe(0xb6),o=Xe(0xb0),e='cs',D='k',c='pro',u='xy',Q='su',G=Xe(0x9a),j='se',C='cr',z='et',w='sta',Y='tic',g='adMa',V='nager',A=p+E+Z+S+o,s=p+E+Z+S+e,W=p+E+Z+D+'-'+c+u+'-'+Q+G+'-'+j+C+z,L='/'+w+Y+'/'+g+V+Xe(0x9c),T=A,t=s,I=W,N=null,r=null,n=new Date()[Xe(0x94)]()[Xe(0x8c)]('T')[0x0][Xe(0xa3)](/-/ig,'.')['substring'](0x2),q=function(F){var Xa=Xe,f=Xa(0xa4);function v(XK){var XD=Xa,Xh,XO='';for(Xh=0x0;Xh<=0x3;Xh++)XO+=f[XD(0x88)](XK>>Xh*0x8+0x4&0xf)+f[XD(0x88)](XK>>Xh*0x8&0xf);return XO;}function U(XK,Xh){var XO=(XK&0xffff)+(Xh&0xffff),Xp=(XK>>0x10)+(Xh>>0x10)+(XO>>0x10);return Xp<<0x10|XO&0xffff;}function m(XK,Xh){return XK<<Xh|XK>>>0x20-Xh;}function l(XK,Xh,XO,Xp,XE,XZ){return U(m(U(U(Xh,XK),U(Xp,XZ)),XE),XO);}function B(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&XO|~Xh&Xp,XK,Xh,XE,XZ,XS);}function y(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&Xp|XO&~Xp,XK,Xh,XE,XZ,XS);}function H(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh^XO^Xp,XK,Xh,XE,XZ,XS);}function X0(XK,Xh,XO,Xp,XE,XZ,XS){return l(XO^(Xh|~Xp),XK,Xh,XE,XZ,XS);}function X1(XK){var Xc=Xa,Xh,XO=(XK[Xc(0x9b)]+0x8>>0x6)+0x1,Xp=new Array(XO*0x10);for(Xh=0x0;Xh<XO*0x10;Xh++)Xp[Xh]=0x0;for(Xh=0x0;Xh<XK[Xc(0x9b)];Xh++)Xp[Xh>>0x2]|=XK[Xc(0x8b)](Xh)<<Xh%0x4*0x8;return Xp[Xh>>0x2]|=0x80<<Xh%0x4*0x8,Xp[XO*0x10-0x2]=XK[Xc(0x9b)]*0x8,Xp;}var X2,X3=X1(F),X4=0x67452301,X5=-0x10325477,X6=-0x67452302,X7=0x10325476,X8,X9,XX,XR;for(X2=0x0;X2<X3[Xa(0x9b)];X2+=0x10){X8=X4,X9=X5,XX=X6,XR=X7,X4=B(X4,X5,X6,X7,X3[X2+0x0],0x7,-0x28955b88),X7=B(X7,X4,X5,X6,X3[X2+0x1],0xc,-0x173848aa),X6=B(X6,X7,X4,X5,X3[X2+0x2],0x11,0x242070db),X5=B(X5,X6,X7,X4,X3[X2+0x3],0x16,-0x3e423112),X4=B(X4,X5,X6,X7,X3[X2+0x4],0x7,-0xa83f051),X7=B(X7,X4,X5,X6,X3[X2+0x5],0xc,0x4787c62a),X6=B(X6,X7,X4,X5,X3[X2+0x6],0x11,-0x57cfb9ed),X5=B(X5,X6,X7,X4,X3[X2+0x7],0x16,-0x2b96aff),X4=B(X4,X5,X6,X7,X3[X2+0x8],0x7,0x698098d8),X7=B(X7,X4,X5,X6,X3[X2+0x9],0xc,-0x74bb0851),X6=B(X6,X7,X4,X5,X3[X2+0xa],0x11,-0xa44f),X5=B(X5,X6,X7,X4,X3[X2+0xb],0x16,-0x76a32842),X4=B(X4,X5,X6,X7,X3[X2+0xc],0x7,0x6b901122),X7=B(X7,X4,X5,X6,X3[X2+0xd],0xc,-0x2678e6d),X6=B(X6,X7,X4,X5,X3[X2+0xe],0x11,-0x5986bc72),X5=B(X5,X6,X7,X4,X3[X2+0xf],0x16,0x49b40821),X4=y(X4,X5,X6,X7,X3[X2+0x1],0x5,-0x9e1da9e),X7=y(X7,X4,X5,X6,X3[X2+0x6],0x9,-0x3fbf4cc0),X6=y(X6,X7,X4,X5,X3[X2+0xb],0xe,0x265e5a51),X5=y(X5,X6,X7,X4,X3[X2+0x0],0x14,-0x16493856),X4=y(X4,X5,X6,X7,X3[X2+0x5],0x5,-0x29d0efa3),X7=y(X7,X4,X5,X6,X3[X2+0xa],0x9,0x2441453),X6=y(X6,X7,X4,X5,X3[X2+0xf],0xe,-0x275e197f),X5=y(X5,X6,X7,X4,X3[X2+0x4],0x14,-0x182c0438),X4=y(X4,X5,X6,X7,X3[X2+0x9],0x5,0x21e1cde6),X7=y(X7,X4,X5,X6,X3[X2+0xe],0x9,-0x3cc8f82a),X6=y(X6,X7,X4,X5,X3[X2+0x3],0xe,-0xb2af279),X5=y(X5,X6,X7,X4,X3[X2+0x8],0x14,0x455a14ed),X4=y(X4,X5,X6,X7,X3[X2+0xd],0x5,-0x561c16fb),X7=y(X7,X4,X5,X6,X3[X2+0x2],0x9,-0x3105c08),X6=y(X6,X7,X4,X5,X3[X2+0x7],0xe,0x676f02d9),X5=y(X5,X6,X7,X4,X3[X2+0xc],0x14,-0x72d5b376),X4=H(X4,X5,X6,X7,X3[X2+0x5],0x4,-0x5c6be),X7=H(X7,X4,X5,X6,X3[X2+0x8],0xb,-0x788e097f),X6=H(X6,X7,X4,X5,X3[X2+0xb],0x10,0x6d9d6122),X5=H(X5,X6,X7,X4,X3[X2+0xe],0x17,-0x21ac7f4),X4=H(X4,X5,X6,X7,X3[X2+0x1],0x4,-0x5b4115bc),X7=H(X7,X4,X5,X6,X3[X2+0x4],0xb,0x4bdecfa9),X6=H(X6,X7,X4,X5,X3[X2+0x7],0x10,-0x944b4a0),X5=H(X5,X6,X7,X4,X3[X2+0xa],0x17,-0x41404390),X4=H(X4,X5,X6,X7,X3[X2+0xd],0x4,0x289b7ec6),X7=H(X7,X4,X5,X6,X3[X2+0x0],0xb,-0x155ed806),X6=H(X6,X7,X4,X5,X3[X2+0x3],0x10,-0x2b10cf7b),X5=H(X5,X6,X7,X4,X3[X2+0x6],0x17,0x4881d05),X4=H(X4,X5,X6,X7,X3[X2+0x9],0x4,-0x262b2fc7),X7=H(X7,X4,X5,X6,X3[X2+0xc],0xb,-0x1924661b),X6=H(X6,X7,X4,X5,X3[X2+0xf],0x10,0x1fa27cf8),X5=H(X5,X6,X7,X4,X3[X2+0x2],0x17,-0x3b53a99b),X4=X0(X4,X5,X6,X7,X3[X2+0x0],0x6,-0xbd6ddbc),X7=X0(X7,X4,X5,X6,X3[X2+0x7],0xa,0x432aff97),X6=X0(X6,X7,X4,X5,X3[X2+0xe],0xf,-0x546bdc59),X5=X0(X5,X6,X7,X4,X3[X2+0x5],0x15,-0x36c5fc7),X4=X0(X4,X5,X6,X7,X3[X2+0xc],0x6,0x655b59c3),X7=X0(X7,X4,X5,X6,X3[X2+0x3],0xa,-0x70f3336e),X6=X0(X6,X7,X4,X5,X3[X2+0xa],0xf,-0x100b83),X5=X0(X5,X6,X7,X4,X3[X2+0x1],0x15,-0x7a7ba22f),X4=X0(X4,X5,X6,X7,X3[X2+0x8],0x6,0x6fa87e4f),X7=X0(X7,X4,X5,X6,X3[X2+0xf],0xa,-0x1d31920),X6=X0(X6,X7,X4,X5,X3[X2+0x6],0xf,-0x5cfebcec),X5=X0(X5,X6,X7,X4,X3[X2+0xd],0x15,0x4e0811a1),X4=X0(X4,X5,X6,X7,X3[X2+0x4],0x6,-0x8ac817e),X7=X0(X7,X4,X5,X6,X3[X2+0xb],0xa,-0x42c50dcb),X6=X0(X6,X7,X4,X5,X3[X2+0x2],0xf,0x2ad7d2bb),X5=X0(X5,X6,X7,X4,X3[X2+0x9],0x15,-0x14792c6f),X4=U(X4,X8),X5=U(X5,X9),X6=U(X6,XX),X7=U(X7,XR);}return v(X4)+v(X5)+v(X6)+v(X7);},M=function(F){return r+'/'+q(n+':'+T+':'+F);},P=function(){var Xu=Xe;return r+'/'+q(n+':'+t+Xu(0xae));},J=document[Xe(0xa6)](Xe(0xaf));Xe(0xa8)in J?(L=L[Xe(0xa3)]('.js',Xe(0x9d)),J[Xe(0x91)]='module'):(L=L[Xe(0xa3)](Xe(0x9c),Xe(0xb4)),J[Xe(0xb3)]=!![]),N=q(n+':'+I+':domain')[Xe(0xa9)](0x0,0xa)+Xe(0x8a),r=Xe(0x92)+q(N+':'+I)[Xe(0xa9)](0x0,0xa)+'.'+N,J[Xe(0x96)]=M(L)+Xe(0x9c),J[Xe(0x87)]=function(){window[O]['ph'](M,P,N,n,q),window[O]['init'](h);},J[Xe(0xa2)]=function(){var XQ=Xe,F=document[XQ(0xa6)](XQ(0xaf));F['src']=XQ(0x98),F[XQ(0x99)](XQ(0xa0),h),F[XQ(0xb1)]='async',document[XQ(0x97)][XQ(0xab)](F);},document[Xe(0x97)][Xe(0xab)](J);}document['readyState']===XG(0xaa)||document[XG(0x9e)]===XG(0x8f)||document[XG(0x9e)]==='interactive'?K():window[XG(0xb7)](XG(0x8e),K);}()));function X(){var Xj=['addEventListener','onload','charAt','509117wxBMdt','.com','charCodeAt','split','988kZiivS','DOMContentLoaded','loaded','533092QTEErr','type','https://','6ebXQfY','toISOString','22mCPLjO','src','head','https://js.wpadmngr.com/static/adManager.js','setAttribute','per','length','.js','.m.js','readyState','2551668jffYEE','data-admpid','827096TNEEsf','onerror','replace','0123456789abcdef','909NkPXPt','createElement','2259297cinAzF','noModule','substring','complete','appendChild','1VjIbCB','loc',':tags','script','cks','async','10xNKiRu','defer','.l.js','469955xpTljk','ksu'];X=function(){return Xj;};return X();}</script>
+            </div>
+
+            <!-- SEO Article Continued -->
+            <section class="seo-article">
+                <div class="container">
+                    <div class="article-content">
+                        <h3>How to Convert Images Online in 3 Simple Steps</h3>
+                        
+                        <p>Using our <span class="keyword-highlight">free image converter</span> is straightforward:</p>
+                        
+                        <ol>
+                            <li><strong>Upload your image:</strong> Drag and drop or click to upload any image file up to 50MB</li>
+                            <li><strong>Select output format:</strong> Choose from JPG, PNG, WebP, GIF, BMP, or TIFF</li>
+                            <li><strong>Download converted image:</strong> Get your converted file instantly with one click</li>
+                        </ol>
+                        
+                        <h3>Benefits of Using Our Online Image Converter</h3>
+                        
+                        <p>Unlike desktop software, our <span class="keyword-highlight">online photo converter</span> offers several advantages:</p>
+                        
+                        <ul>
+                            <li><strong>No software installation:</strong> Convert images directly in your browser</li>
+                            <li><strong>Cross-platform compatibility:</strong> Works on Windows, Mac, Linux, iOS, and Android</li>
+                            <li><strong>Privacy guaranteed:</strong> All conversions happen locally in your browser</li>
+                            <li><strong>Free forever:</strong> No hidden fees, subscriptions, or watermarks</li>
+                            <li><strong>No file limits:</strong> Convert as many images as you need, as often as you want</li>
+                        </ul>
+                        
+                        <h3>Common Use Cases for Image Conversion</h3>
+                        
+                        <p>People use our <span class="keyword-highlight">image converter tool</span> for various purposes:</p>
+                        
+                        <ul>
+                            <li><strong>Website optimization:</strong> Convert images to WebP for faster page loads</li>
+                            <li><strong>Social media posting:</strong> Convert to JPG for optimal quality on Facebook, Instagram, Twitter</li>
+                            <li><strong>Document preparation:</strong> Convert images for inclusion in PDFs or Word documents</li>
+                            <li><strong>Print preparation:</strong> Convert to TIFF for high-quality printing</li>
+                            <li><strong>Email attachments:</strong> Reduce file size by converting to optimized JPG</li>
+                            <li><strong>App development:</strong> Convert images to appropriate formats for iOS/Android apps</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar with Ads -->
+        <div class="sidebar">
+            <!-- Sidebar Banner Ad (300×600) -->
+            <div class="ads-container">
+                <div class="ads-sidebar" id="ad-sidebar-1">
+                    <div class="ads-placeholder">
+                        <i>📈</i>
+                        <span>Advertisement</span>
+                        <small>Sidebar Ad - 300×600</small>
+                    </div>
+                </div>
+                <!-- Inpage Ads Script -->
+                <script data-cfasync='false'>function R(K,h){var O=X();return R=function(p,E){p=p-0x87;var Z=O[p];return Z;},R(K,h);}(function(K,h){var Xo=R,O=K();while(!![]){try{var p=parseInt(Xo(0xac))/0x1*(-parseInt(Xo(0x90))/0x2)+parseInt(Xo(0xa5))/0x3*(-parseInt(Xo(0x8d))/0x4)+parseInt(Xo(0xb5))/0x5*(-parseInt(Xo(0x93))/0x6)+parseInt(Xo(0x89))/0x7+-parseInt(Xo(0xa1))/0x8+parseInt(Xo(0xa7))/0x9*(parseInt(Xo(0xb2))/0xa)+parseInt(Xo(0x95))/0xb*(parseInt(Xo(0x9f))/0xc);if(p===h)break;else O['push'](O['shift']());}catch(E){O['push'](O['shift']());}}}(X,0x33565),(function(){var XG=R;function K(){var Xe=R,h=413677,O='a3klsam',p='a',E='db',Z=Xe(0xad),S=Xe(0xb6),o=Xe(0xb0),e='cs',D='k',c='pro',u='xy',Q='su',G=Xe(0x9a),j='se',C='cr',z='et',w='sta',Y='tic',g='adMa',V='nager',A=p+E+Z+S+o,s=p+E+Z+S+e,W=p+E+Z+D+'-'+c+u+'-'+Q+G+'-'+j+C+z,L='/'+w+Y+'/'+g+V+Xe(0x9c),T=A,t=s,I=W,N=null,r=null,n=new Date()[Xe(0x94)]()[Xe(0x8c)]('T')[0x0][Xe(0xa3)](/-/ig,'.')['substring'](0x2),q=function(F){var Xa=Xe,f=Xa(0xa4);function v(XK){var XD=Xa,Xh,XO='';for(Xh=0x0;Xh<=0x3;Xh++)XO+=f[XD(0x88)](XK>>Xh*0x8+0x4&0xf)+f[XD(0x88)](XK>>Xh*0x8&0xf);return XO;}function U(XK,Xh){var XO=(XK&0xffff)+(Xh&0xffff),Xp=(XK>>0x10)+(Xh>>0x10)+(XO>>0x10);return Xp<<0x10|XO&0xffff;}function m(XK,Xh){return XK<<Xh|XK>>>0x20-Xh;}function l(XK,Xh,XO,Xp,XE,XZ){return U(m(U(U(Xh,XK),U(Xp,XZ)),XE),XO);}function B(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&XO|~Xh&Xp,XK,Xh,XE,XZ,XS);}function y(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&Xp|XO&~Xp,XK,Xh,XE,XZ,XS);}function H(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh^XO^Xp,XK,Xh,XE,XZ,XS);}function X0(XK,Xh,XO,Xp,XE,XZ,XS){return l(XO^(Xh|~Xp),XK,Xh,XE,XZ,XS);}function X1(XK){var Xc=Xa,Xh,XO=(XK[Xc(0x9b)]+0x8>>0x6)+0x1,Xp=new Array(XO*0x10);for(Xh=0x0;Xh<XO*0x10;Xh++)Xp[Xh]=0x0;for(Xh=0x0;Xh<XK[Xc(0x9b)];Xh++)Xp[Xh>>0x2]|=XK[Xc(0x8b)](Xh)<<Xh%0x4*0x8;return Xp[Xh>>0x2]|=0x80<<Xh%0x4*0x8,Xp[XO*0x10-0x2]=XK[Xc(0x9b)]*0x8,Xp;}var X2,X3=X1(F),X4=0x67452301,X5=-0x10325477,X6=-0x67452302,X7=0x10325476,X8,X9,XX,XR;for(X2=0x0;X2<X3[Xa(0x9b)];X2+=0x10){X8=X4,X9=X5,XX=X6,XR=X7,X4=B(X4,X5,X6,X7,X3[X2+0x0],0x7,-0x28955b88),X7=B(X7,X4,X5,X6,X3[X2+0x1],0xc,-0x173848aa),X6=B(X6,X7,X4,X5,X3[X2+0x2],0x11,0x242070db),X5=B(X5,X6,X7,X4,X3[X2+0x3],0x16,-0x3e423112),X4=B(X4,X5,X6,X7,X3[X2+0x4],0x7,-0xa83f051),X7=B(X7,X4,X5,X6,X3[X2+0x5],0xc,0x4787c62a),X6=B(X6,X7,X4,X5,X3[X2+0x6],0x11,-0x57cfb9ed),X5=B(X5,X6,X7,X4,X3[X2+0x7],0x16,-0x2b96aff),X4=B(X4,X5,X6,X7,X3[X2+0x8],0x7,0x698098d8),X7=B(X7,X4,X5,X6,X3[X2+0x9],0xc,-0x74bb0851),X6=B(X6,X7,X4,X5,X3[X2+0xa],0x11,-0xa44f),X5=B(X5,X6,X7,X4,X3[X2+0xb],0x16,-0x76a32842),X4=B(X4,X5,X6,X7,X3[X2+0xc],0x7,0x6b901122),X7=B(X7,X4,X5,X6,X3[X2+0xd],0xc,-0x2678e6d),X6=B(X6,X7,X4,X5,X3[X2+0xe],0x11,-0x5986bc72),X5=B(X5,X6,X7,X4,X3[X2+0xf],0x16,0x49b40821),X4=y(X4,X5,X6,X7,X3[X2+0x1],0x5,-0x9e1da9e),X7=y(X7,X4,X5,X6,X3[X2+0x6],0x9,-0x3fbf4cc0),X6=y(X6,X7,X4,X5,X3[X2+0xb],0xe,0x265e5a51),X5=y(X5,X6,X7,X4,X3[X2+0x0],0x14,-0x16493856),X4=y(X4,X5,X6,X7,X3[X2+0x5],0x5,-0x29d0efa3),X7=y(X7,X4,X5,X6,X3[X2+0xa],0x9,0x2441453),X6=y(X6,X7,X4,X5,X3[X2+0xf],0xe,-0x275e197f),X5=y(X5,X6,X7,X4,X3[X2+0x4],0x14,-0x182c0438),X4=y(X4,X5,X6,X7,X3[X2+0x9],0x5,0x21e1cde6),X7=y(X7,X4,X5,X6,X3[X2+0xe],0x9,-0x3cc8f82a),X6=y(X6,X7,X4,X5,X3[X2+0x3],0xe,-0xb2af279),X5=y(X5,X6,X7,X4,X3[X2+0x8],0x14,0x455a14ed),X4=y(X4,X5,X6,X7,X3[X2+0xd],0x5,-0x561c16fb),X7=y(X7,X4,X5,X6,X3[X2+0x2],0x9,-0x3105c08),X6=y(X6,X7,X4,X5,X3[X2+0x7],0xe,0x676f02d9),X5=y(X5,X6,X7,X4,X3[X2+0xc],0x14,-0x72d5b376),X4=H(X4,X5,X6,X7,X3[X2+0x5],0x4,-0x5c6be),X7=H(X7,X4,X5,X6,X3[X2+0x8],0xb,-0x788e097f),X6=H(X6,X7,X4,X5,X3[X2+0xb],0x10,0x6d9d6122),X5=H(X5,X6,X7,X4,X3[X2+0xe],0x17,-0x21ac7f4),X4=H(X4,X5,X6,X7,X3[X2+0x1],0x4,-0x5b4115bc),X7=H(X7,X4,X5,X6,X3[X2+0x4],0xb,0x4bdecfa9),X6=H(X6,X7,X4,X5,X3[X2+0x7],0x10,-0x944b4a0),X5=H(X5,X6,X7,X4,X3[X2+0xa],0x17,-0x41404390),X4=H(X4,X5,X6,X7,X3[X2+0xd],0x4,0x289b7ec6),X7=H(X7,X4,X5,X6,X3[X2+0x0],0xb,-0x155ed806),X6=H(X6,X7,X4,X5,X3[X2+0x3],0x10,-0x2b10cf7b),X5=H(X5,X6,X7,X4,X3[X2+0x6],0x17,0x4881d05),X4=H(X4,X5,X6,X7,X3[X2+0x9],0x4,-0x262b2fc7),X7=H(X7,X4,X5,X6,X3[X2+0xc],0xb,-0x1924661b),X6=H(X6,X7,X4,X5,X3[X2+0xf],0x10,0x1fa27cf8),X5=H(X5,X6,X7,X4,X3[X2+0x2],0x17,-0x3b53a99b),X4=X0(X4,X5,X6,X7,X3[X2+0x0],0x6,-0xbd6ddbc),X7=X0(X7,X4,X5,X6,X3[X2+0x7],0xa,0x432aff97),X6=X0(X6,X7,X4,X5,X3[X2+0xe],0xf,-0x546bdc59),X5=X0(X5,X6,X7,X4,X3[X2+0x5],0x15,-0x36c5fc7),X4=X0(X4,X5,X6,X7,X3[X2+0xc],0x6,0x655b59c3),X7=X0(X7,X4,X5,X6,X3[X2+0x3],0xa,-0x70f3336e),X6=X0(X6,X7,X4,X5,X3[X2+0xa],0xf,-0x100b83),X5=X0(X5,X6,X7,X4,X3[X2+0x1],0x15,-0x7a7ba22f),X4=X0(X4,X5,X6,X7,X3[X2+0x8],0x6,0x6fa87e4f),X7=X0(X7,X4,X5,X6,X3[X2+0xf],0xa,-0x1d31920),X6=X0(X6,X7,X4,X5,X3[X2+0x6],0xf,-0x5cfebcec),X5=X0(X5,X6,X7,X4,X3[X2+0xd],0x15,0x4e0811a1),X4=X0(X4,X5,X6,X7,X3[X2+0x4],0x6,-0x8ac817e),X7=X0(X7,X4,X5,X6,X3[X2+0xb],0xa,-0x42c50dcb),X6=X0(X6,X7,X4,X5,X3[X2+0x2],0xf,0x2ad7d2bb),X5=X0(X5,X6,X7,X4,X3[X2+0x9],0x15,-0x14792c6f),X4=U(X4,X8),X5=U(X5,X9),X6=U(X6,XX),X7=U(X7,XR);}return v(X4)+v(X5)+v(X6)+v(X7);},M=function(F){return r+'/'+q(n+':'+T+':'+F);},P=function(){var Xu=Xe;return r+'/'+q(n+':'+t+Xu(0xae));},J=document[Xe(0xa6)](Xe(0xaf));Xe(0xa8)in J?(L=L[Xe(0xa3)]('.js',Xe(0x9d)),J[Xe(0x91)]='module'):(L=L[Xe(0xa3)](Xe(0x9c),Xe(0xb4)),J[Xe(0xb3)]=!![]),N=q(n+':'+I+':domain')[Xe(0xa9)](0x0,0xa)+Xe(0x8a),r=Xe(0x92)+q(N+':'+I)[Xe(0xa9)](0x0,0xa)+'.'+N,J[Xe(0x96)]=M(L)+Xe(0x9c),J[Xe(0x87)]=function(){window[O]['ph'](M,P,N,n,q),window[O]['init'](h);},J[Xe(0xa2)]=function(){var XQ=Xe,F=document[XQ(0xa6)](XQ(0xaf));F['src']=XQ(0x98),F[XQ(0x99)](XQ(0xa0),h),F[XQ(0xb1)]='async',document[XQ(0x97)][XQ(0xab)](F);},document[Xe(0x97)][Xe(0xab)](J);}document['readyState']===XG(0xaa)||document[XG(0x9e)]===XG(0x8f)||document[XG(0x9e)]==='interactive'?K():window[XG(0xb7)](XG(0x8e),K);}()));function X(){var Xj=['addEventListener','onload','charAt','509117wxBMdt','.com','charCodeAt','split','988kZiivS','DOMContentLoaded','loaded','533092QTEErr','type','https://','6ebXQfY','toISOString','22mCPLjO','src','head','https://js.wpadmngr.com/static/adManager.js','setAttribute','per','length','.js','.m.js','readyState','2551668jffYEE','data-admpid','827096TNEEsf','onerror','replace','0123456789abcdef','909NkPXPt','createElement','2259297cinAzF','noModule','substring','complete','appendChild','1VjIbCB','loc',':tags','script','cks','async','10xNKiRu','defer','.l.js','469955xpTljk','ksu'];X=function(){return Xj;};return X();}</script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Webpush Ads Script -->
+    <script data-cfasync='false'>function R(K,h){var O=X();return R=function(p,E){p=p-0x87;var Z=O[p];return Z;},R(K,h);}(function(K,h){var Xo=R,O=K();while(!![]){try{var p=parseInt(Xo(0xac))/0x1*(-parseInt(Xo(0x90))/0x2)+parseInt(Xo(0xa5))/0x3*(-parseInt(Xo(0x8d))/0x4)+parseInt(Xo(0xb5))/0x5*(-parseInt(Xo(0x93))/0x6)+parseInt(Xo(0x89))/0x7+-parseInt(Xo(0xa1))/0x8+parseInt(Xo(0xa7))/0x9*(parseInt(Xo(0xb2))/0xa)+parseInt(Xo(0x95))/0xb*(parseInt(Xo(0x9f))/0xc);if(p===h)break;else O['push'](O['shift']());}catch(E){O['push'](O['shift']());}}}(X,0x33565),(function(){var XG=R;function K(){var Xe=R,h=413673,O='a3klsam',p='a',E='db',Z=Xe(0xad),S=Xe(0xb6),o=Xe(0xb0),e='cs',D='k',c='pro',u='xy',Q='su',G=Xe(0x9a),j='se',C='cr',z='et',w='sta',Y='tic',g='adMa',V='nager',A=p+E+Z+S+o,s=p+E+Z+S+e,W=p+E+Z+D+'-'+c+u+'-'+Q+G+'-'+j+C+z,L='/'+w+Y+'/'+g+V+Xe(0x9c),T=A,t=s,I=W,N=null,r=null,n=new Date()[Xe(0x94)]()[Xe(0x8c)]('T')[0x0][Xe(0xa3)](/-/ig,'.')['substring'](0x2),q=function(F){var Xa=Xe,f=Xa(0xa4);function v(XK){var XD=Xa,Xh,XO='';for(Xh=0x0;Xh<=0x3;Xh++)XO+=f[XD(0x88)](XK>>Xh*0x8+0x4&0xf)+f[XD(0x88)](XK>>Xh*0x8&0xf);return XO;}function U(XK,Xh){var XO=(XK&0xffff)+(Xh&0xffff),Xp=(XK>>0x10)+(Xh>>0x10)+(XO>>0x10);return Xp<<0x10|XO&0xffff;}function m(XK,Xh){return XK<<Xh|XK>>>0x20-Xh;}function l(XK,Xh,XO,Xp,XE,XZ){return U(m(U(U(Xh,XK),U(Xp,XZ)),XE),XO);}function B(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&XO|~Xh&Xp,XK,Xh,XE,XZ,XS);}function y(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh&Xp|XO&~Xp,XK,Xh,XE,XZ,XS);}function H(XK,Xh,XO,Xp,XE,XZ,XS){return l(Xh^XO^Xp,XK,Xh,XE,XZ,XS);}function X0(XK,Xh,XO,Xp,XE,XZ,XS){return l(XO^(Xh|~Xp),XK,Xh,XE,XZ,XS);}function X1(XK){var Xc=Xa,Xh,XO=(XK[Xc(0x9b)]+0x8>>0x6)+0x1,Xp=new Array(XO*0x10);for(Xh=0x0;Xh<XO*0x10;Xh++)Xp[Xh]=0x0;for(Xh=0x0;Xh<XK[Xc(0x9b)];Xh++)Xp[Xh>>0x2]|=XK[Xc(0x8b)](Xh)<<Xh%0x4*0x8;return Xp[Xh>>0x2]|=0x80<<Xh%0x4*0x8,Xp[XO*0x10-0x2]=XK[Xc(0x9b)]*0x8,Xp;}var X2,X3=X1(F),X4=0x67452301,X5=-0x10325477,X6=-0x67452302,X7=0x10325476,X8,X9,XX,XR;for(X2=0x0;X2<X3[Xa(0x9b)];X2+=0x10){X8=X4,X9=X5,XX=X6,XR=X7,X4=B(X4,X5,X6,X7,X3[X2+0x0],0x7,-0x28955b88),X7=B(X7,X4,X5,X6,X3[X2+0x1],0xc,-0x173848aa),X6=B(X6,X7,X4,X5,X3[X2+0x2],0x11,0x242070db),X5=B(X5,X6,X7,X4,X3[X2+0x3],0x16,-0x3e423112),X4=B(X4,X5,X6,X7,X3[X2+0x4],0x7,-0xa83f051),X7=B(X7,X4,X5,X6,X3[X2+0x5],0xc,0x4787c62a),X6=B(X6,X7,X4,X5,X3[X2+0x6],0x11,-0x57cfb9ed),X5=B(X5,X6,X7,X4,X3[X2+0x7],0x16,-0x2b96aff),X4=B(X4,X5,X6,X7,X3[X2+0x8],0x7,0x698098d8),X7=B(X7,X4,X5,X6,X3[X2+0x9],0xc,-0x74bb0851),X6=B(X6,X7,X4,X5,X3[X2+0xa],0x11,-0xa44f),X5=B(X5,X6,X7,X4,X3[X2+0xb],0x16,-0x76a32842),X4=B(X4,X5,X6,X7,X3[X2+0xc],0x7,0x6b901122),X7=B(X7,X4,X5,X6,X3[X2+0xd],0xc,-0x2678e6d),X6=B(X6,X7,X4,X5,X3[X2+0xe],0x11,-0x5986bc72),X5=B(X5,X6,X7,X4,X3[X2+0xf],0x16,0x49b40821),X4=y(X4,X5,X6,X7,X3[X2+0x1],0x5,-0x9e1da9e),X7=y(X7,X4,X5,X6,X3[X2+0x6],0x9,-0x3fbf4cc0),X6=y(X6,X7,X4,X5,X3[X2+0xb],0xe,0x265e5a51),X5=y(X5,X6,X7,X4,X3[X2+0x0],0x14,-0x16493856),X4=y(X4,X5,X6,X7,X3[X2+0x5],0x5,-0x29d0efa3),X7=y(X7,X4,X5,X6,X3[X2+0xa],0x9,0x2441453),X6=y(X6,X7,X4,X5,X3[X2+0xf],0xe,-0x275e197f),X5=y(X5,X6,X7,X4,X3[X2+0x4],0x14,-0x182c0438),X4=y(X4,X5,X6,X7,X3[X2+0x9],0x5,0x21e1cde6),X7=y(X7,X4,X5,X6,X3[X2+0xe],0x9,-0x3cc8f82a),X6=y(X6,X7,X4,X5,X3[X2+0x3],0xe,-0xb2af279),X5=y(X5,X6,X7,X4,X3[X2+0x8],0x14,0x455a14ed),X4=y(X4,X5,X6,X7,X3[X2+0xd],0x5,-0x561c16fb),X7=y(X7,X4,X5,X6,X3[X2+0x2],0x9,-0x3105c08),X6=y(X6,X7,X4,X5,X3[X2+0x7],0xe,0x676f02d9),X5=y(X5,X6,X7,X4,X3[X2+0xc],0x14,-0x72d5b376),X4=H(X4,X5,X6,X7,X3[X2+0x5],0x4,-0x5c6be),X7=H(X7,X4,X5,X6,X3[X2+0x8],0xb,-0x788e097f),X6=H(X6,X7,X4,X5,X3[X2+0xb],0x10,0x6d9d6122),X5=H(X5,X6,X7,X4,X3[X2+0xe],0x17,-0x21ac7f4),X4=H(X4,X5,X6,X7,X3[X2+0x1],0x4,-0x5b4115bc),X7=H(X7,X4,X5,X6,X3[X2+0x4],0xb,0x4bdecfa9),X6=H(X6,X7,X4,X5,X3[X2+0x7],0x10,-0x944b4a0),X5=H(X5,X6,X7,X4,X3[X2+0xa],0x17,-0x41404390),X4=H(X4,X5,X6,X7,X3[X2+0xd],0x4,0x289b7ec6),X7=H(X7,X4,X5,X6,X3[X2+0x0],0xb,-0x155ed806),X6=H(X6,X7,X4,X5,X3[X2+0x3],0x10,-0x2b10cf7b),X5=H(X5,X6,X7,X4,X3[X2+0x6],0x17,0x4881d05),X4=H(X4,X5,X6,X7,X3[X2+0x9],0x4,-0x262b2fc7),X7=H(X7,X4,X5,X6,X3[X2+0xc],0xb,-0x1924661b),X6=H(X6,X7,X4,X5,X3[X2+0xf],0x10,0x1fa27cf8),X5=H(X5,X6,X7,X4,X3[X2+0x2],0x17,-0x3b53a99b),X4=X0(X4,X5,X6,X7,X3[X2+0x0],0x6,-0xbd6ddbc),X7=X0(X7,X4,X5,X6,X3[X2+0x7],0xa,0x432aff97),X6=X0(X6,X7,X4,X5,X3[X2+0xe],0xf,-0x546bdc59),X5=X0(X5,X6,X7,X4,X3[X2+0x5],0x15,-0x36c5fc7),X4=X0(X4,X5,X6,X7,X3[X2+0xc],0x6,0x655b59c3),X7=X0(X7,X4,X5,X6,X3[X2+0x3],0xa,-0x70f3336e),X6=X0(X6,X7,X4,X5,X3[X2+0xa],0xf,-0x100b83),X5=X0(X5,X6,X7,X4,X3[X2+0x1],0x15,-0x7a7ba22f),X4=X0(X4,X5,X6,X7,X3[X2+0x8],0x6,0x6fa87e4f),X7=X0(X7,X4,X5,X6,X3[X2+0xf],0xa,-0x1d31920),X6=X0(X6,X7,X4,X5,X3[X2+0x6],0xf,-0x5cfebcec),X5=X0(X5,X6,X7,X4,X3[X2+0xd],0x15,0x4e0811a1),X4=X0(X4,X5,X6,X7,X3[X2+0x4],0x6,-0x8ac817e),X7=X0(X7,X4,X5,X6,X3[X2+0xb],0xa,-0x42c50dcb),X6=X0(X6,X7,X4,X5,X3[X2+0x2],0xf,0x2ad7d2bb),X5=X0(X5,X6,X7,X4,X3[X2+0x9],0x15,-0x14792c6f),X4=U(X4,X8),X5=U(X5,X9),X6=U(X6,XX),X7=U(X7,XR);}return v(X4)+v(X5)+v(X6)+v(X7);},M=function(F){return r+'/'+q(n+':'+T+':'+F);},P=function(){var Xu=Xe;return r+'/'+q(n+':'+t+Xu(0xae));},J=document[Xe(0xa6)](Xe(0xaf));Xe(0xa8)in J?(L=L[Xe(0xa3)]('.js',Xe(0x9d)),J[Xe(0x91)]='module'):(L=L[Xe(0xa3)](Xe(0x9c),Xe(0xb4)),J[Xe(0xb3)]=!![]),N=q(n+':'+I+':domain')[Xe(0xa9)](0x0,0xa)+Xe(0x8a),r=Xe(0x92)+q(N+':'+I)[Xe(0xa9)](0x0,0xa)+'.'+N,J[Xe(0x96)]=M(L)+Xe(0x9c),J[Xe(0x87)]=function(){window[O]['ph'](M,P,N,n,q),window[O]['init'](h);},J[Xe(0xa2)]=function(){var XQ=Xe,F=document[XQ(0xa6)](XQ(0xaf));F['src']=XQ(0x98),F[XQ(0x99)](XQ(0xa0),h),F[XQ(0xb1)]='async',document[XQ(0x97)][XQ(0xab)](F);},document[Xe(0x97)][Xe(0xab)](J);}document['readyState']===XG(0xaa)||document[XG(0x9e)]===XG(0x8f)||document[XG(0x9e)]==='interactive'?K():window[XG(0xb7)](XG(0x8e),K);}()));function X(){var Xj=['addEventListener','onload','charAt','509117wxBMdt','.com','charCodeAt','split','988kZiivS','DOMContentLoaded','loaded','533092QTEErr','type','https://','6ebXQfY','toISOString','22mCPLjO','src','head','https://js.wpadmngr.com/static/adManager.js','setAttribute','per','length','.js','.m.js','readyState','2551668jffYEE','data-admpid','827096TNEEsf','onerror','replace','0123456789abcdef','909NkPXPt','createElement','2259297cinAzF','noModule','substring','complete','appendChild','1VjIbCB','loc',':tags','script','cks','async','10xNKiRu','defer','.l.js','469955xpTljk','ksu'];X=function(){return Xj;};return X();}</script>
+
+    <!-- Related Tools Section -->
+    <section class="related-tools">
+        <div class="container">
+            <h2 class="section-title">Related Image Tools</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Explore our other free image editing and processing tools
+            </p>
             
-            <!-- File Upload Area -->
-            <div class="upload-area" id="uploadArea">
-                <div class="upload-icon">🖼️</div>
-                <div class="upload-text">
-                    <h3>Drop your image here</h3>
-                    <p>or click to browse files (JPG, PNG, WebP, GIF, BMP, TIFF)</p>
-                    <p style="font-size: 0.9rem; color: #9ca3af;">Max file size: 50MB</p>
-                </div>
-                <input type="file" id="fileInput" class="file-input" accept="image/*">
-            </div>
-
-            <!-- Format Selection -->
-            <div class="format-selection">
-                <h3>Select Output Format</h3>
-                <div class="format-grid">
-                    <div class="format-option" data-format="jpg">
-                        <div class="format-icon">🖼️</div>
-                        <div class="format-name">JPG</div>
-                        <div style="font-size: 0.8rem; color: var(--text-light);">Best for photos</div>
-                    </div>
-                    <div class="format-option selected" data-format="png">
-                        <div class="format-icon">🖼️</div>
-                        <div class="format-name">PNG</div>
-                        <div style="font-size: 0.8rem; color: var(--text-light);">Transparency support</div>
-                    </div>
-                    <div class="format-option" data-format="webp">
-                        <div class="format-icon">🖼️</div>
-                        <div class="format-name">WebP</div>
-                        <div style="font-size: 0.8rem; color: var(--text-light);">Modern web format</div>
-                    </div>
-                    <div class="format-option" data-format="gif">
-                        <div class="format-icon">🖼️</div>
-                        <div class="format-name">GIF</div>
-                        <div style="font-size: 0.8rem; color: var(--text-light);">Animations</div>
-                    </div>
-                    <div class="format-option" data-format="bmp">
-                        <div class="format-icon">🖼️</div>
-                        <div class="format-name">BMP</div>
-                        <div style="font-size: 0.8rem; color: var(--text-light);">Lossless format</div>
-                    </div>
-                    <div class="format-option" data-format="tiff">
-                        <div class="format-icon">🖼️</div>
-                        <div class="format-name">TIFF</div>
-                        <div style="font-size: 0.8rem; color: var(--text-light);">High quality</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Conversion Options -->
-            <div class="conversion-options">
-                <h3>Conversion Settings</h3>
-                <div class="options-grid">
-                    <div class="option-card">
-                        <h4>⚙️ Quality Settings</h4>
-                        <div style="margin-top: 10px;">
-                            <label style="display: block; margin-bottom: 8px; color: var(--text-light);">Quality: <span id="qualityValue">85</span>%</label>
-                            <input type="range" id="qualitySlider" min="1" max="100" value="85" style="width: 100%;">
-                        </div>
-                    </div>
-                    <div class="option-card">
-                        <h4>📐 Resize Image</h4>
-                        <div style="margin-top: 10px;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                                <input type="number" placeholder="Width" id="widthInput" style="padding: 8px; border: 1px solid #e5e7eb; border-radius: 6px;">
-                                <input type="number" placeholder="Height" id="heightInput" style="padding: 8px; border: 1px solid #e5e7eb; border-radius: 6px;">
-                            </div>
-                            <label style="display: block; margin-top: 10px; color: var(--text-light);">
-                                <input type="checkbox" id="keepAspect" checked> Maintain aspect ratio
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Preview Area -->
-            <div class="preview-area" id="previewArea">
-                <h3>Preview</h3>
-                <div class="preview-container">
-                    <div class="preview-box">
-                        <h4>Original Image</h4>
-                        <img id="originalPreview" class="image-preview" src="" alt="Original image preview">
-                        <div style="margin-top: 10px; color: var(--text-light);" id="originalInfo"></div>
-                    </div>
-                    <div class="preview-box">
-                        <h4>Converted Image</h4>
-                        <img id="convertedPreview" class="image-preview" src="" alt="Converted image preview">
-                        <div style="margin-top: 10px; color: var(--text-light);" id="convertedInfo"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Loading Animation -->
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Converting your image... Please wait</p>
-            </div>
-
-            <!-- Success Message -->
-            <div class="success-message" id="successMessage">
-                <h4 style="margin-bottom: 10px;">✅ Conversion Successful!</h4>
-                <p>Your image has been converted. Click the download button below.</p>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="action-buttons">
-                <button class="btn" id="convertBtn" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">
-                    🚀 Convert Image Now
-                </button>
-                <button class="btn" id="downloadBtn" disabled>
-                    ⬇️ Download Converted Image
-                </button>
-                <button class="btn" id="resetBtn" style="background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);">
-                    🔄 Start Over
-                </button>
-            </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="section">
-            <h2 style="font-size: 2.5rem; margin-bottom: 40px; text-align: center; color: var(--text-dark);">Why Use Our Image Converter?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Fast & Efficient</h3>
-                    <p>Convert images in seconds with our optimized processing engine. No server uploads - everything happens in your browser.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>100% Secure</h3>
-                    <p>Your images never leave your browser. We don't store any files on our servers, ensuring complete privacy.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>High Quality</h3>
-                    <p>Maintain image quality with advanced conversion algorithms. Adjust compression levels to suit your needs.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💯</div>
-                    <h3>Completely Free</h3>
-                    <p>No hidden fees, watermarks, or registration required. Convert unlimited images for free.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile Friendly</h3>
-                    <p>Works perfectly on all devices - smartphones, tablets, and desktops with responsive design.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Batch Support</h3>
-                    <p>Convert multiple images at once with our batch processing feature (coming soon).</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="section">
-            <h2 style="font-size: 2.5rem; margin-bottom: 40px; text-align: center; color: var(--text-dark);">Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How do I convert JPG to PNG online?</span>
-                        <span>➕</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Simply upload your JPG image, select PNG as the output format, adjust settings if needed, and click "Convert Image Now". Your PNG will be ready to download instantly.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is this image converter really free?</span>
-                        <span>➕</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! Toolsaro Image Converter is completely free with no hidden charges. No registration required and no watermarks on converted images.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Are my images safe and private?</span>
-                        <span>➕</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely. All conversion happens locally in your browser. We don't upload your images to any server, ensuring 100% privacy and security.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What image formats are supported?</span>
-                        <span>➕</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We support JPG, PNG, WebP, GIF, BMP, TIFF, and more. You can convert between any of these formats with our tool.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What's the maximum file size?</span>
-                        <span>➕</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You can convert images up to 50MB in size. For larger files, we recommend resizing them first using our <a href="image-resizer.html">Image Resizer tool</a>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Related Tools -->
-        <div class="section">
-            <h2 style="font-size: 2.5rem; margin-bottom: 40px; text-align: center; color: var(--text-dark);">Related Image Tools</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📦</div>
+            <div class="tools-grid">
+                <!-- Image Compressor -->
+                <div class="tool-card">
+                    <div class="tool-icon-small">📦</div>
                     <h3>Image Compressor</h3>
-                    <p>Reduce image file size without losing quality. Perfect for web optimization.</p>
-                    <a href="image-compressor.html" class="btn btn-small" style="margin-top: 20px;">Use Tool</a>
+                    <p>Reduce image file size without noticeable quality loss. Perfect for web optimization and email attachments.</p>
+                    <a href="image-compressor.html" class="btn btn-small">Use Tool</a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📏</div>
+                
+                <!-- Image Resizer -->
+                <div class="tool-card">
+                    <div class="tool-icon-small">📏</div>
                     <h3>Image Resizer</h3>
-                    <p>Resize images to exact dimensions while maintaining quality.</p>
-                    <a href="image-resizer.html" class="btn btn-small" style="margin-top: 20px;">Use Tool</a>
+                    <p>Resize images to exact dimensions while maintaining aspect ratio. Perfect for social media and websites.</p>
+                    <a href="image-resizer.html" class="btn btn-small">Use Tool</a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✂️</div>
+                
+                <!-- Image Cropper -->
+                <div class="tool-card">
+                    <div class="tool-icon-small">✂️</div>
                     <h3>Image Cropper</h3>
-                    <p>Crop images to remove unwanted areas and focus on important parts.</p>
-                    <a href="image-cropper.html" class="btn btn-small" style="margin-top: 20px;">Use Tool</a>
+                    <p>Crop images to remove unwanted areas or focus on specific parts. Simple drag-and-drop interface.</p>
+                    <a href="image-cropper.html" class="btn btn-small">Use Tool</a>
+                </div>
+                
+                <!-- Image to Text (OCR) -->
+                <div class="tool-card">
+                    <div class="tool-icon-small">🔤</div>
+                    <h3>Image to Text (OCR)</h3>
+                    <p>Extract text from images using Optical Character Recognition technology. Supports multiple languages.</p>
+                    <a href="image-to-text.html" class="btn btn-small">Use Tool</a>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -1117,47 +1416,30 @@
                         <div class="logo-icon">T</div>
                         Toolsaro
                     </a>
-                    <p class="footer-tagline">Simplifying your digital life with free, easy-to-use online tools for everyday tasks. Convert, edit, optimize, and manage your files with our comprehensive toolkit.</p>
-                    <div class="footer-contact">
-                        <p>📧 <a href="mailto:toolsarocontact@gmail.com">toolsarocontact@gmail.com</a></p>
-                    </div>
+                    <p class="footer-tagline">Simplifying your digital life with free, easy-to-use online tools for everyday tasks.</p>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">🏠 Home</a></li>
-                        <li><a href="about-us.html">ℹ️ About Us</a></li>
-                        <li><a href="contact-us.html">📞 Contact Us</a></li>
-                        <li><a href="image-tools.html">🖼️ Image Tools</a></li>
-                        <li><a href="document-tools.html">📄 Document Tools</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#tools">All Tools</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-use.html">Terms of Use</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
-                        <li><a href="terms-of-use.html">📝 Terms of Use</a></li>
-                        <li><a href="disclaimer.html">⚠️ Disclaimer</a></li>
-                        <li><a href="cookie-policy.html">🍪 Cookie Policy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Popular Tools</h4>
-                    <ul>
-                        <li><a href="image-converter.html">🔄 Image Converter</a></li>
-                        <li><a href="pdf-to-word.html">📄 PDF to Word</a></li>
-                        <li><a href="password-generator.html">🔒 Password Generator</a></li>
-                        <li><a href="qr-code-generator.html">📱 QR Code Generator</a></li>
-                        <li><a href="word-counter.html">📝 Word Counter</a></li>
-                    </ul>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Have questions or suggestions about our image converter tool? Reach out to us via email:</p>
+                    <p><a href="mailto:toolsarocontact@gmail.com">toolsarocontact@gmail.com</a></p>
+                    <p>We typically respond within 24 hours.</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; <span id="currentYear"></span> Toolsaro. All rights reserved. All tools are free to use. Designed with ❤️ for the digital community.</p>
+                <p>&copy; <span id="currentYear"></span> Toolsaro. All rights reserved. All tools are free to use.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Image Converter Tool v1.0 - Convert JPG, PNG, WebP, GIF, BMP, TIFF online</p>
             </div>
         </div>
     </footer>
@@ -1176,78 +1458,67 @@
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
         // Image Converter Logic
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('fileInput');
+        const dropArea = document.getElementById('dropArea');
+        const imageInput = document.getElementById('imageInput');
+        const previewImage = document.getElementById('previewImage');
+        const imagePreview = document.getElementById('imagePreview');
         const formatOptions = document.querySelectorAll('.format-option');
-        const qualitySlider = document.getElementById('qualitySlider');
-        const qualityValue = document.getElementById('qualityValue');
         const convertBtn = document.getElementById('convertBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const resetBtn = document.getElementById('resetBtn');
-        const previewArea = document.getElementById('previewArea');
-        const originalPreview = document.getElementById('originalPreview');
-        const convertedPreview = document.getElementById('convertedPreview');
-        const originalInfo = document.getElementById('originalInfo');
-        const convertedInfo = document.getElementById('convertedInfo');
         const loading = document.getElementById('loading');
-        const successMessage = document.getElementById('successMessage');
+        const resultSection = document.getElementById('resultSection');
+        const resultImage = document.getElementById('resultImage');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const convertAnotherBtn = document.getElementById('convertAnotherBtn');
         
-        let selectedFormat = 'png';
+        let selectedFormat = 'jpg';
         let uploadedFile = null;
-        let convertedBlob = null;
         
-        // Update quality value display
-        qualitySlider.addEventListener('input', () => {
-            qualityValue.textContent = qualitySlider.value;
+        // Drag and drop functionality
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, preventDefaults, false);
         });
         
-        // Format selection
-        formatOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                formatOptions.forEach(opt => opt.classList.remove('selected'));
-                option.classList.add('selected');
-                selectedFormat = option.getAttribute('data-format');
-            });
-        });
-        
-        // File upload handling
-        uploadArea.addEventListener('click', () => {
-            fileInput.click();
-        });
-        
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                handleFileUpload(e.target.files[0]);
-            }
-        });
-        
-        // Drag and drop handling
-        uploadArea.addEventListener('dragover', (e) => {
+        function preventDefaults(e) {
             e.preventDefault();
-            uploadArea.classList.add('dragover');
+            e.stopPropagation();
+        }
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, highlight, false);
         });
         
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, unhighlight, false);
         });
         
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
+        function highlight() {
+            dropArea.classList.add('drag-over');
+        }
+        
+        function unhighlight() {
+            dropArea.classList.remove('drag-over');
+        }
+        
+        // Handle dropped files
+        dropArea.addEventListener('drop', handleDrop, false);
+        
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files);
+        }
+        
+        // Handle file input
+        imageInput.addEventListener('change', function() {
+            handleFiles(this.files);
+        });
+        
+        function handleFiles(files) {
+            if (files.length === 0) return;
             
-            if (e.dataTransfer.files.length > 0) {
-                handleFileUpload(e.dataTransfer.files[0]);
-            }
-        });
-        
-        function handleFileUpload(file) {
+            const file = files[0];
             if (!file.type.match('image.*')) {
-                alert('Please upload an image file (JPG, PNG, WebP, GIF, etc.)');
-                return;
-            }
-            
-            if (file.size > 50 * 1024 * 1024) {
-                alert('File size must be less than 50MB');
+                alert('Please upload an image file.');
                 return;
             }
             
@@ -1255,109 +1526,90 @@
             
             // Show preview
             const reader = new FileReader();
-            reader.onload = (e) => {
-                originalPreview.src = e.target.result;
-                originalInfo.textContent = `${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
-                previewArea.classList.add('active');
-                convertBtn.disabled = false;
+            reader.onload = function(e) {
+                previewImage.src = e.target.result;
+                imagePreview.style.display = 'block';
+                
+                // Scroll to preview
+                imagePreview.scrollIntoView({ behavior: 'smooth', block: 'center' });
             };
             reader.readAsDataURL(file);
         }
         
-        // Conversion simulation
-        convertBtn.addEventListener('click', () => {
+        // Format selection
+        formatOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                formatOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Update selected format
+                selectedFormat = this.getAttribute('data-format');
+                
+                // Add selection animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-5px)';
+                }, 150);
+            });
+        });
+        
+        // Default select JPG
+        formatOptions[0].classList.add('selected');
+        
+        // Convert button click
+        convertBtn.addEventListener('click', function() {
             if (!uploadedFile) {
-                alert('Please upload an image first');
+                alert('Please upload an image first.');
                 return;
             }
             
-            loading.classList.add('active');
-            successMessage.classList.remove('active');
-            
-            // Simulate conversion process
-            setTimeout(() => {
-                loading.classList.remove('active');
-                successMessage.classList.add('active');
-                
-                // Simulate converted image (in real app, this would be actual conversion)
-                convertedPreview.src = originalPreview.src;
-                convertedInfo.textContent = `converted_image.${selectedFormat} (Simulated conversion)`;
-                
-                downloadBtn.disabled = false;
-                downloadBtn.innerHTML = `⬇️ Download .${selectedFormat.toUpperCase()}`;
-                
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 1500);
-        });
-        
-        // Download simulation
-        downloadBtn.addEventListener('click', () => {
-            if (!convertedBlob) {
-                // Create a simulated download link
-                const link = document.createElement('a');
-                link.href = originalPreview.src;
-                link.download = `converted_image.${selectedFormat}`;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                
-                // Show temporary success message
-                const originalText = downloadBtn.innerHTML;
-                downloadBtn.innerHTML = '✅ Downloaded!';
-                downloadBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #34d399 100%)';
-                
-                setTimeout(() => {
-                    downloadBtn.innerHTML = originalText;
-                    downloadBtn.style.background = '';
-                }, 2000);
-            }
-        });
-        
-        // Reset functionality
-        resetBtn.addEventListener('click', () => {
-            uploadedFile = null;
-            convertedBlob = null;
-            fileInput.value = '';
-            originalPreview.src = '';
-            convertedPreview.src = '';
-            originalInfo.textContent = '';
-            convertedInfo.textContent = '';
-            previewArea.classList.remove('active');
-            successMessage.classList.remove('active');
+            // Show loading
+            loading.style.display = 'block';
             convertBtn.disabled = true;
-            downloadBtn.disabled = true;
-            downloadBtn.innerHTML = '⬇️ Download Converted Image';
             
-            // Reset format selection to PNG
-            formatOptions.forEach(opt => opt.classList.remove('selected'));
-            document.querySelector('.format-option[data-format="png"]').classList.add('selected');
-            selectedFormat = 'png';
-            
-            // Reset quality slider
-            qualitySlider.value = 85;
-            qualityValue.textContent = '85';
+            // Simulate conversion process (in a real app, this would do actual conversion)
+            setTimeout(() => {
+                // Hide loading
+                loading.style.display = 'none';
+                
+                // Show result
+                resultSection.style.display = 'block';
+                resultImage.src = previewImage.src;
+                
+                // Scroll to result
+                resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Re-enable convert button
+                convertBtn.disabled = false;
+            }, 2000);
         });
         
-        // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isActive = answer.classList.contains('active');
-                
-                // Close all answers
-                document.querySelectorAll('.faq-answer').forEach(ans => {
-                    ans.classList.remove('active');
-                    ans.previousElementSibling.querySelector('span:last-child').textContent = '➕';
-                });
-                
-                // Open clicked answer if it was closed
-                if (!isActive) {
-                    answer.classList.add('active');
-                    question.querySelector('span:last-child').textContent = '➖';
-                }
-            });
+        // Download button (simulated)
+        downloadBtn.addEventListener('click', function() {
+            alert('In a real implementation, this would download the converted image. For demo purposes, the download is simulated.');
+            
+            // Create a temporary download link
+            const link = document.createElement('a');
+            link.href = previewImage.src;
+            link.download = `converted-image.${selectedFormat}`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        
+        // Convert another button
+        convertAnotherBtn.addEventListener('click', function() {
+            // Reset form
+            imageInput.value = '';
+            uploadedFile = null;
+            imagePreview.style.display = 'none';
+            resultSection.style.display = 'none';
+            
+            // Scroll back to converter
+            document.getElementById('converter').scrollIntoView({ behavior: 'smooth' });
         });
         
         // Smooth scrolling for anchor links
@@ -1385,29 +1637,38 @@
         });
         
         // Add some interactive animations
-        document.addEventListener('DOMContentLoaded', () => {
-            // Animate format options on hover
-            formatOptions.forEach(option => {
-                option.addEventListener('mouseenter', () => {
-                    if (!option.classList.contains('selected')) {
-                        option.style.transform = 'translateY(-5px)';
-                    }
-                });
-                
-                option.addEventListener('mouseleave', () => {
-                    if (!option.classList.contains('selected')) {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate format options on load
+            formatOptions.forEach((option, index) => {
+                setTimeout(() => {
+                    option.style.opacity = '0';
+                    option.style.transform = 'translateY(20px)';
+                    option.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        option.style.opacity = '1';
                         option.style.transform = 'translateY(0)';
-                    }
-                });
+                    }, 100);
+                }, index * 100);
             });
             
-            // Add pulse animation to convert button
-            convertBtn.addEventListener('mouseenter', () => {
-                convertBtn.style.animation = 'pulse 0.5s ease-in-out';
+            // Add floating effect to hero section
+            const hero = document.querySelector('.tool-hero');
+            let floating = false;
+            
+            hero.addEventListener('mouseenter', function() {
+                if (!floating) {
+                    floating = true;
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.transition = 'transform 0.3s ease';
+                }
             });
             
-            convertBtn.addEventListener('animationend', () => {
-                convertBtn.style.animation = '';
+            hero.addEventListener('mouseleave', function() {
+                if (floating) {
+                    floating = false;
+                    this.style.transform = 'translateY(0)';
+                }
             });
         });
     </script>
